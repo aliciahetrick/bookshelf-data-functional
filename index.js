@@ -27,7 +27,17 @@ function favorite(book, index) {
   }
   console.log('Added favorite')
   console.log(favorites)
+
+  renderFavoriteString()
   renderBookshelf()
+  return favorites
+}
+
+function renderFavoriteString() {
+  let favoriteString = document.createElement('p')
+  favoriteString.textContent = `includes ${favorites.length} favorite book(s)`
+  const nav = document.querySelector('.navbar')
+  nav.append(favoriteString)
 }
 
 //rendering the bookshelf
