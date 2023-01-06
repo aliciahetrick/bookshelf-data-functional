@@ -16,10 +16,8 @@ createBooks()
 
 console.log(arrOfBooks)
 
-// arrOfBooks.map(renderBooks)
-
-function renderBook() {
-  arrOfBooks.map((book) => {
+function renderBookshelf() {
+  const arrOfBooksCreateDOMElements = arrOfBooks.map((book) => {
     const bookCard = document.createElement('section')
     bookCard.classList.add('book-card')
 
@@ -52,14 +50,11 @@ function renderBook() {
     //append book cards to bookCards section
     bookCard.append(language, title, image, author, subject)
 
-    const bookList = document.createElement('section')
-    bookList.append(bookCard)
-    const main = document.querySelector('main')
-    bookList.classList.add('book-list')
-    main.append(bookList)
-
     return bookCard
   })
+
+  const main = document.querySelector('main')
+  main.replaceChildren(...arrOfBooksCreateDOMElements)
 }
 
-renderBook()
+renderBookshelf()
