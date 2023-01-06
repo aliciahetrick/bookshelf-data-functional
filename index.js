@@ -74,4 +74,28 @@ renderBookshelf()
 //update fav book count
 function updateFavBookCount() {
   console.log('favorite added')
+  console.log(arrOfBooks)
+  const count = document.querySelector('.fav-books-count')
+
+  function totalFavCount() {
+    return arrOfBooks.reduce((accumulator, currentBook) => {
+      if (currentBook.isFavorite) {
+        accumulator += 1
+        console.log('currentBook', currentBook)
+      } else {
+        accumulator
+      }
+    }, 0)
+  }
+  let reduceCount = totalFavCount()
+  count.textContent = reduceCount
+
+  // let counter = 0
+  // for (let book of arrOfBooks) {
+  //   if (book.isFavorite) {
+  //     counter += 1
+  //   }
+  // }
+  // console.log(counter)
+  // count.textContent = counter
 }
