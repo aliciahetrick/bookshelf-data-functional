@@ -8,38 +8,13 @@ function createBooks() {
       language: bookData[i].language,
       subject: bookData[i].subject,
       title: bookData[i].title,
+      isFavorite: false,
     }
     arrOfBooks.push(book)
   }
 }
 
 createBooks()
-
-// favorite books
-let favorites = []
-
-function favorite(book, index) {
-  if (favorites.includes(book)) {
-    index = favorites.indexOf(book)
-    favorites = favorites.slice(0, index).concat(favorites.slice(index + 1))
-  } else {
-    favorites.push(book)
-  }
-  console.log('Added favorite')
-  console.log(favorites)
-  function renderFavoriteString() {
-    let favoriteString = document.createElement('p')
-    favoriteString.textContent = `includes ${favorites.length} favorite book(s)`
-    const nav = document.querySelector('.navbar')
-    nav.append(favoriteString)
-  }
-
-  renderFavoriteString()
-  renderBookshelf()
-  return favorites
-}
-
-//render favorite string on the page
 
 //rendering the bookshelf
 function renderBookshelf() {
@@ -76,17 +51,15 @@ function renderBookshelf() {
     //append book cards to bookCards section
     bookCard.append(language, title, image, author, subject)
 
-    // these next few sections are another way of writing the if...else that's commented out below
     const favBook = document.createElement('p')
-    favBook.innerText = '♥'
-    favBook.addEventListener('click', () => favorite(book))
+    favBook.textContent = book.isFavorite ? '♥' : '♡'
+    bookCard.prepend(favBook)
 
-    const notFavBook = document.createElement('p')
-    notFavBook.innerText = '♡'
-    notFavBook.addEventListener('click', () => favorite(book))
-
-    const elementToAdd = favorites.includes(book) ? favBook : notFavBook
-    bookCard.prepend(elementToAdd)
+    favBook.addEventListener('click', () => {
+      book.isFavorite = !book.isFavorite
+      favBook.textContent = book.isFavorite ? '♥' : '♡'
+      updateFavBookCount()
+    })
 
     return bookCard
   })
@@ -97,3 +70,8 @@ function renderBookshelf() {
 }
 
 renderBookshelf()
+
+//update fav book count
+function updateFavBookCount() {
+  console.log('favorite added')
+}
