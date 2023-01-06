@@ -1,5 +1,6 @@
 let arrOfBooks = []
 
+//generating the arrayOfBooks
 function createBooks() {
   for (let i = 0; i < bookData.length; i++) {
     let book = {
@@ -14,8 +15,22 @@ function createBooks() {
 
 createBooks()
 
-console.log(arrOfBooks)
+// favorite books
+let favorites = []
 
+function favorite(book, index) {
+  if (favorites.includes(book)) {
+    index = favorites.indexOf(book)
+    favorites = favorites.slice(0, index).concat(favorites.slice(index + 1))
+  } else {
+    favorites.push(book)
+  }
+  console.log('Added favorite')
+  console.log(favorites)
+  renderBookshelf()
+}
+
+//rendering the bookshelf
 function renderBookshelf() {
   const arrOfBooksCreateDOMElements = arrOfBooks.map((book) => {
     const bookCard = document.createElement('section')
@@ -50,9 +65,22 @@ function renderBookshelf() {
     //append book cards to bookCards section
     bookCard.append(language, title, image, author, subject)
 
+    // these next few sections are another way of writing the if...else that's commented out below
+    const favBook = document.createElement('p')
+    favBook.innerText = '♥'
+    favBook.addEventListener('click', () => favorite(book))
+
+    const notFavBook = document.createElement('p')
+    notFavBook.innerText = '♡'
+    notFavBook.addEventListener('click', () => favorite(book))
+
+    const elementToAdd = favorites.includes(book) ? favBook : notFavBook
+    bookCard.prepend(elementToAdd)
+
     return bookCard
   })
 
+  //select and replace main with book DOM elements
   const main = document.querySelector('main')
   main.replaceChildren(...arrOfBooksCreateDOMElements)
 }
