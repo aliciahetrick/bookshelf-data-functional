@@ -1,6 +1,8 @@
 let arrOfBooks = []
 
-//generating the arrayOfBooks
+/**
+ * creates instances of every book using book-data.js
+ */
 function createBooks() {
   for (let i = 0; i < bookData.length; i++) {
     let book = {
@@ -16,46 +18,49 @@ function createBooks() {
 
 createBooks()
 
-//rendering the bookshelf
+/**
+ * returns the book card elements and renders them to a bookshelf
+ */
 function renderBookshelf() {
   const arrOfBooksCreateDOMElements = arrOfBooks.map((book) => {
     const bookCard = document.createElement('section')
     bookCard.classList.add('book-card')
 
-    //create and set book title
+    // creates and sets book title
     const title = document.createElement('p')
     title.textContent = book.title
     title.classList.add('book-title')
-    // console.log(title.textContent)
 
-    //create and set book image
+    // creates and sets book image
     const image = document.createElement('img')
     image.src = 'book.png'
     image.classList.add('book-image')
 
-    //create and set book author
+    // creates and sets book author
     const author = document.createElement('p')
     author.textContent = book.author
     author.classList.add('book-author')
 
-    //create and set book genre
+    // creates and sets book genre
     const subject = document.createElement('p')
     subject.textContent = `Topics: ${book.subject}`
     subject.classList.add('book-genre')
 
-    //create and set book language
+    // creates and sest book language
     const language = document.createElement('p')
     language.textContent = book.language
     language.classList.add('book-language')
 
-    //append book cards to bookCards section
+    // appends book card elements to book card
     bookCard.append(language, title, image, author, subject)
 
+    // creates and renders favorite button
     const favBook = document.createElement('p')
     favBook.classList.add('fav-book-heart-button')
     favBook.textContent = book.isFavorite ? '♥' : '♡'
     bookCard.prepend(favBook)
 
+    // toggles favorite button
     favBook.addEventListener('click', () => {
       book.isFavorite = !book.isFavorite
       favBook.textContent = book.isFavorite ? '♥' : '♡'
@@ -65,7 +70,7 @@ function renderBookshelf() {
     return bookCard
   })
 
-  //select and replace main with book DOM elements
+  // selects and replaces main with rendered book elements
   const main = document.querySelector('main')
   main.replaceChildren(...arrOfBooksCreateDOMElements)
 }

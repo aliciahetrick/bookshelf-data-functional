@@ -1,16 +1,13 @@
-//sort books by dropdown
 const sortButton = document.querySelector('.sort-button')
 const sortButtonContainer = document.querySelector('sort-button-container')
 
-// when clicking "sort books by" button
+// creates and displays sropbown options when "sort books by..." button is clicked
 sortButton.addEventListener('click', function () {
-  console.log('clicked')
+  // disables sort button
   sortButton.disabled = true
-
-  // disable button
   sortButton.setAttribute('disabled', '')
 
-  // create dropdown options
+  // creates dropdown options
   const ascendTitleButton = document.createElement('button')
   const descendTitleButton = document.createElement('button')
   const ascendAuthorButton = document.createElement('button')
@@ -24,7 +21,7 @@ sortButton.addEventListener('click', function () {
   descendAuthorButton.textContent = 'author (Z to A)'
   sortByTopicsButton.textContent = 'sort by most topics'
 
-  // append sort by buttons to sort by button
+  // appends sort by buttons to main sort by button
   sortButton.append(
     ascendTitleButton,
     descendTitleButton,
@@ -33,6 +30,7 @@ sortButton.addEventListener('click', function () {
     sortByTopicsButton
   )
 
+  // removes all dropdown sort options
   function removeSort() {
     ascendTitleButton.remove()
     descendTitleButton.remove()
@@ -41,7 +39,7 @@ sortButton.addEventListener('click', function () {
     sortByTopicsButton.remove()
   }
 
-  // sort by title ascending
+  // sorts by title ascending
   ascendTitleButton.addEventListener('click', function () {
     console.log('A to z Title Button')
     arrOfBooks = arrOfBooks.sort((a, b) => (a.title < b.title ? -1 : 1))
@@ -84,10 +82,11 @@ sortButton.addEventListener('click', function () {
     removeSort()
   })
 
-  // //sortButton style
+  // sort button style
   sortButton.style.display = 'flex'
   sortButton.style.flexDirection = 'column'
 
+  // sort dropdown option style
   let selectStyle = [
     ascendTitleButton,
     descendTitleButton,
