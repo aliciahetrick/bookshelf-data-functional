@@ -131,43 +131,44 @@ sortButton.addEventListener('click', function () {
   // console.log(sortButtonContainer)
   // sortButton.setAttribute('disabled', '')
 
-  const AscendTitleButton = document.createElement('button')
-  const DescendTitleButton = document.createElement('button')
-  const AscendAuthorButton = document.createElement('button')
-  const DescendAuthorButton = document.createElement('button')
+  const ascendTitleButton = document.createElement('button')
+  const descendTitleButton = document.createElement('button')
+  const ascendAuthorButton = document.createElement('button')
+  const descendAuthorButton = document.createElement('button')
   const sortByTopicsButton = document.createElement('button')
 
-  AscendTitleButton.textContent = 'title (A to Z)'
-  DescendTitleButton.textContent = 'title (Z to A)'
-  AscendAuthorButton.textContent = 'author (A to Z)'
-  DescendAuthorButton.textContent = 'author (Z to A)'
+  ascendTitleButton.textContent = 'title (A to Z)'
+  descendTitleButton.textContent = 'title (Z to A)'
+  ascendAuthorButton.textContent = 'author (A to Z)'
+  descendAuthorButton.textContent = 'author (Z to A)'
   sortByTopicsButton.textContent = 'sort by most topics'
 
   // console.log(AscendTitleButton)
+  console.log(sortButton)
 
   sortButton.append(
-    AscendTitleButton,
-    DescendTitleButton,
-    AscendAuthorButton,
-    DescendAuthorButton,
+    ascendTitleButton,
+    descendTitleButton,
+    ascendAuthorButton,
+    descendAuthorButton,
     sortByTopicsButton
   )
 
-  AscendTitleButton.addEventListener('click', function () {
+  ascendTitleButton.addEventListener('click', function () {
     console.log('A to z Title Button')
     arrOfBooks = arrOfBooks.sort((a, b) => (a.title < b.title ? -1 : 1))
     renderBookshelf()
   })
-  DescendTitleButton.addEventListener('click', function () {
+  descendTitleButton.addEventListener('click', function () {
     arrOfBooks = arrOfBooks.sort((a, b) => (a.title > b.title ? -1 : 1))
     renderBookshelf()
   })
-  AscendAuthorButton.addEventListener('click', function () {
+  ascendAuthorButton.addEventListener('click', function () {
     console.log('A to Z Author Button')
     arrOfBooks = arrOfBooks.sort((a, b) => (a.author[0] < b.author[0] ? -1 : 1))
     renderBookshelf()
   })
-  DescendAuthorButton.addEventListener('click', function () {
+  descendAuthorButton.addEventListener('click', function () {
     console.log('Z to A Author Button')
     arrOfBooks = arrOfBooks.sort((a, b) => (a.author[0] > b.author[0] ? -1 : 1))
     renderBookshelf()
@@ -177,4 +178,41 @@ sortButton.addEventListener('click', function () {
     arrOfBooks = arrOfBooks.sort((a, b) => (a.subject.length > b.subject.length ? -1 : 1))
     renderBookshelf()
   })
+
+  // //sortButton style
+
+  sortButton.style.display = 'flex'
+  sortButton.style.flex_direction = 'column'
+
+  let selectStyle = [
+    ascendTitleButton,
+    descendTitleButton,
+    ascendAuthorButton,
+    descendAuthorButton,
+    sortByTopicsButton,
+  ]
+
+  selectStyle.map((element) => {
+    element.style.all = 'unset'
+    element.style.color = 'rgb(231, 217, 249)'
+    element.backgroundColor = 'rgb(100, 118, 239'
+    element.fontFamily = 'raleway'
+  })
+  ascendTitleButton.style.all = 'unset'
+  ascendTitleButton.style.color = 'rgb(231, 217, 249)'
+  ascendTitleButton.backgroundColor = 'rgb(100, 118, 239'
+  ascendTitleButton.fontFamily = 'raleway'
+
+  // .sort-button {
+  //   display: flex;
+  //   flex-direction: column;
+
+  //   all: unset;
+  //   color: rgb(231, 217, 249);
+  //   background-color: rgb(100, 118, 239);
+  //   font-family: Raleway;
+  //   font-weight: 600;
+  //   font-size: 15px;
+  //   text-transform: uppercase;
+  // }
 })
