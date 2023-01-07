@@ -52,6 +52,7 @@ function renderBookshelf() {
     bookCard.append(language, title, image, author, subject)
 
     const favBook = document.createElement('p')
+    favBook.classList.add('fav-book-heart-button')
     favBook.textContent = book.isFavorite ? '♥' : '♡'
     bookCard.prepend(favBook)
 
