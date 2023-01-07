@@ -91,9 +91,15 @@ const searchButton = document.querySelector('.search-button')
 const searchInput = document.querySelector('.search-input')
 searchButton.addEventListener('click', function () {
   console.log('Searching...')
-  arrOfBooks = arrOfBooks.filter((book) =>
-    book.title.toLowerCase().includes(searchInput.value.toLowerCase())
+  const searchQuery = searchInput.value.toLowerCase()
+  // TODO:
+  // add comapares for author and subject
+  arrOfBooks = arrOfBooks.filter(
+    (book) => book.title.toLowerCase().includes(searchQuery)
+    // book.author.toLowerCase().includes(searchQuery) +
+    // book.subject.toLowerCase().includes(searchQuery)
   )
+  console.log(arrOfBooks)
   renderBookshelf()
 })
 
