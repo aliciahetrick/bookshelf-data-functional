@@ -9,23 +9,30 @@
   </head>
   <body>
     <nav class="navbar">
+      <!-- // TRYING -->
+
+      <span class="sort-button-container">
+        <button class="sort-button">Sort By...</button>
+      </span>
+      <!-- // TRYING -->
+
       <span>Alicia's Library</span>
-      <span
-        >includes
+      <span>
+        includes
         <span class="fav-books-count">0</span>
         favorite book(s)</span
       >
+
+      <!-- TODO: Search -->
+      <section class="search">
+        <input type="search" placeholder="Search" class="search-inout" />
+        <button class="search-button">Search</button>
+      </section>
     </nav>
 
-    <main class="book-list">
-      <!-- <section class="add-book">
-        <input type="text" placeholder="author" class="author" />
-        <input type="text" placeholder="language" class="language" />
-        <input type="text" placeholder="subject" class="subject" />
-        <input type="text" placeholder="title" class="title" />
-        <button class="add-book-button">Add Book</button>
-      </section> -->
-    </main>
+    <section>
+      <main class="book-list"></main>
+    </section>
     <script src="js/book-data.js"></script>
     <script src="index.js"></script>
   </body>

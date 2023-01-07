@@ -21,13 +21,12 @@ main {
 .navbar {
   display: flex;
   justify-content: center;
-  align-items: center;
 
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
-  height: 7em;
+  height: 8em;
   gap: 1em;
 
   color: rgb(231, 217, 249);
@@ -109,4 +108,9 @@ main {
 .add-book {
   display: flex;
   justify-content: center;
+}
+
+.sort-button {
+  display: flex;
+  flex-direction: column;
 }

@@ -84,3 +84,97 @@ function updateFavBookCount() {
 
   count.textContent = totalFavCount
 }
+
+// TODO:
+// search box using filter
+
+// const searchButton = document.querySelector('.search-button')
+
+// searchButton.addEventListener('click', function () {
+//   console.log('yay, I did it!')
+//   filterBooks(arrOfBooks)
+// })
+
+// // function filterBooks(arrOfBooks) {
+// //   const searchInput = document.querySelector('.search-input')
+// //   arrOfBooks.filter(function book() {
+// //     book.title.toLowerCase().includes(searchInput.value.toLowerCase())
+// //   })
+// // }
+
+// const searchInput = document.querySelector('.search-input')
+
+// const filterBooks = (arrayOfBooks) =>
+//   arrayOfBooks.filter((book) => book.title.toLowerCase().includes(searchInput.value.toLowerCase()))
+
+// SORTBY Dropdown Menu
+// Options :  Sort by Title (Ascending & Descending),
+//            Sort by Author: (Ascending & Descending),
+//            Sort by number of topics
+//            (5 total)
+// Clicking on an option will .sort() the arrOfBooks
+
+const sortButton = document.querySelector('.sort-button')
+const sortButtonContainer = document.querySelector('sort-button-container')
+
+// when click on sort button
+// disable the sort button
+// create 5 options that are buttons themself
+sortButton.addEventListener('click', function () {
+  console.log('clicked')
+  sortButton.disabled = true
+
+  sortButton.setAttribute('disabled', '')
+
+  // const sortButtonContainer = document.querySelector('.sort-button-container')
+  // const sortButton = document.querySelector('sort-button')
+  // console.log(sortButtonContainer)
+  // sortButton.setAttribute('disabled', '')
+
+  const AscendTitleButton = document.createElement('button')
+  const DescendTitleButton = document.createElement('button')
+  const AscendAuthorButton = document.createElement('button')
+  const DescendAuthorButton = document.createElement('button')
+  const sortByTopicsButton = document.createElement('button')
+
+  AscendTitleButton.textContent = 'title (A to Z)'
+  DescendTitleButton.textContent = 'title (Z to A)'
+  AscendAuthorButton.textContent = 'author (A to Z)'
+  DescendAuthorButton.textContent = 'author (Z to A)'
+  sortByTopicsButton.textContent = 'sort by most topics'
+
+  // console.log(AscendTitleButton)
+
+  sortButton.append(
+    AscendTitleButton,
+    DescendTitleButton,
+    AscendAuthorButton,
+    DescendAuthorButton,
+    sortByTopicsButton
+  )
+
+  AscendTitleButton.addEventListener('click', function () {
+    console.log('A to z Title Button')
+    arrOfBooks = arrOfBooks.sort((a, b) => (a.title < b.title ? -1 : 1))
+    renderBookshelf()
+  })
+  DescendTitleButton.addEventListener('click', function () {
+    arrOfBooks = arrOfBooks.sort((a, b) => (a.title > b.title ? -1 : 1))
+    renderBookshelf()
+  })
+  AscendAuthorButton.addEventListener('click', function () {
+    console.log('A to Z Author Button')
+    arrOfBooks = arrOfBooks.sort((a, b) => (a.author[0] < b.author[0] ? -1 : 1))
+    renderBookshelf()
+  })
+  DescendAuthorButton.addEventListener('click', function () {
+    console.log('Z to A Author Button')
+    arrOfBooks = arrOfBooks.sort((a, b) => (a.author[0] > b.author[0] ? -1 : 1))
+    renderBookshelf()
+  })
+  sortByTopicsButton.addEventListener('click', function () {
+    console.log('Sort By Topics')
+    arrOfBooks = arrOfBooks.sort((a, b) => (a.subject.length > b.subject.length ? -1 : 1))
+    renderBookshelf()
+  })
+})
