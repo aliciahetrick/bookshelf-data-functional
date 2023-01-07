@@ -71,31 +71,16 @@ function renderBookshelf() {
 
 renderBookshelf()
 
-//update fav book count
+//display and update favorit book count
 function updateFavBookCount() {
-  console.log('favorite added')
-  console.log(arrOfBooks)
   const count = document.querySelector('.fav-books-count')
+  const totalFavCount = arrOfBooks.reduce(function (accumulator, currentBook) {
+    if (currentBook.isFavorite) {
+      return accumulator + 1
+    } else {
+      return accumulator
+    }
+  }, 0)
 
-  function totalFavCount() {
-    return arrOfBooks.reduce((accumulator, currentBook) => {
-      if (currentBook.isFavorite) {
-        accumulator += 1
-        console.log('currentBook', currentBook)
-      } else {
-        accumulator
-      }
-    }, 0)
-  }
-  let reduceCount = totalFavCount()
-  count.textContent = reduceCount
-
-  // let counter = 0
-  // for (let book of arrOfBooks) {
-  //   if (book.isFavorite) {
-  //     counter += 1
-  //   }
-  // }
-  // console.log(counter)
-  // count.textContent = counter
+  count.textContent = totalFavCount
 }
