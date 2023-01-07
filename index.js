@@ -107,45 +107,33 @@ function updateFavBookCount() {
 // const filterBooks = (arrayOfBooks) =>
 //   arrayOfBooks.filter((book) => book.title.toLowerCase().includes(searchInput.value.toLowerCase()))
 
-// SORTBY Dropdown Menu
-// Options :  Sort by Title (Ascending & Descending),
-//            Sort by Author: (Ascending & Descending),
-//            Sort by number of topics
-//            (5 total)
-// Clicking on an option will .sort() the arrOfBooks
-
+//sort books by dropdown
 const sortButton = document.querySelector('.sort-button')
 const sortButtonContainer = document.querySelector('sort-button-container')
 
-// when click on sort button
-// disable the sort button
-// create 5 options that are buttons themself
+// when clicking "sort books by" button
 sortButton.addEventListener('click', function () {
   console.log('clicked')
   sortButton.disabled = true
 
+  // disable button
   sortButton.setAttribute('disabled', '')
 
-  // const sortButtonContainer = document.querySelector('.sort-button-container')
-  // const sortButton = document.querySelector('sort-button')
-  // console.log(sortButtonContainer)
-  // sortButton.setAttribute('disabled', '')
-
+  // create dropdown options
   const ascendTitleButton = document.createElement('button')
   const descendTitleButton = document.createElement('button')
   const ascendAuthorButton = document.createElement('button')
   const descendAuthorButton = document.createElement('button')
   const sortByTopicsButton = document.createElement('button')
 
+  // set text on dropdown button
   ascendTitleButton.textContent = 'title (A to Z)'
   descendTitleButton.textContent = 'title (Z to A)'
   ascendAuthorButton.textContent = 'author (A to Z)'
   descendAuthorButton.textContent = 'author (Z to A)'
   sortByTopicsButton.textContent = 'sort by most topics'
 
-  // console.log(AscendTitleButton)
-  console.log(sortButton)
-
+  // append sort by buttons to sort by button
   sortButton.append(
     ascendTitleButton,
     descendTitleButton,
@@ -154,25 +142,34 @@ sortButton.addEventListener('click', function () {
     sortByTopicsButton
   )
 
+  // sort by title ascending
   ascendTitleButton.addEventListener('click', function () {
     console.log('A to z Title Button')
     arrOfBooks = arrOfBooks.sort((a, b) => (a.title < b.title ? -1 : 1))
     renderBookshelf()
   })
+
+  // sort by title descending
   descendTitleButton.addEventListener('click', function () {
     arrOfBooks = arrOfBooks.sort((a, b) => (a.title > b.title ? -1 : 1))
     renderBookshelf()
   })
+
+  // sort by author ascending
   ascendAuthorButton.addEventListener('click', function () {
     console.log('A to Z Author Button')
     arrOfBooks = arrOfBooks.sort((a, b) => (a.author[0] < b.author[0] ? -1 : 1))
     renderBookshelf()
   })
+
+  // sort by author descending
   descendAuthorButton.addEventListener('click', function () {
     console.log('Z to A Author Button')
     arrOfBooks = arrOfBooks.sort((a, b) => (a.author[0] > b.author[0] ? -1 : 1))
     renderBookshelf()
   })
+
+  // sort by most topics
   sortByTopicsButton.addEventListener('click', function () {
     console.log('Sort By Topics')
     arrOfBooks = arrOfBooks.sort((a, b) => (a.subject.length > b.subject.length ? -1 : 1))
@@ -180,7 +177,6 @@ sortButton.addEventListener('click', function () {
   })
 
   // //sortButton style
-
   sortButton.style.display = 'flex'
   sortButton.style.flex_direction = 'column'
 
@@ -202,17 +198,4 @@ sortButton.addEventListener('click', function () {
   ascendTitleButton.style.color = 'rgb(231, 217, 249)'
   ascendTitleButton.backgroundColor = 'rgb(100, 118, 239'
   ascendTitleButton.fontFamily = 'raleway'
-
-  // .sort-button {
-  //   display: flex;
-  //   flex-direction: column;
-
-  //   all: unset;
-  //   color: rgb(231, 217, 249);
-  //   background-color: rgb(100, 118, 239);
-  //   font-family: Raleway;
-  //   font-weight: 600;
-  //   font-size: 15px;
-  //   text-transform: uppercase;
-  // }
 })
