@@ -86,6 +86,10 @@ function updateFavBookCount() {
   count.textContent = totalFavCount
 }
 
+// TODO:
+// currently only searches through clean words
+//(ex: words after a space, not string of letters within a word)
+
 // search through books for search input match
 const searchButton = document.querySelector('.search-button')
 const searchInput = document.querySelector('.search-input')
@@ -190,12 +194,8 @@ sortButton.addEventListener('click', function () {
   })
 
   // //sortButton style
-
-  // TODO:
-  // Change dropdown to display column
   sortButton.style.display = 'flex'
   sortButton.style.flexDirection = 'column'
-  sortButton.st
 
   let selectStyle = [
     ascendTitleButton,
