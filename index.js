@@ -86,26 +86,16 @@ function updateFavBookCount() {
 }
 
 // TODO:
-// search box using filter
-
-// const searchButton = document.querySelector('.search-button')
-
-// searchButton.addEventListener('click', function () {
-//   console.log('yay, I did it!')
-//   filterBooks(arrOfBooks)
-// })
-
-// // function filterBooks(arrOfBooks) {
-// //   const searchInput = document.querySelector('.search-input')
-// //   arrOfBooks.filter(function book() {
-// //     book.title.toLowerCase().includes(searchInput.value.toLowerCase())
-// //   })
-// // }
-
-// const searchInput = document.querySelector('.search-input')
-
-// const filterBooks = (arrayOfBooks) =>
-//   arrayOfBooks.filter((book) => book.title.toLowerCase().includes(searchInput.value.toLowerCase()))
+// search using filter
+const searchButton = document.querySelector('.search-button')
+const searchInput = document.querySelector('.search-input')
+searchButton.addEventListener('click', function () {
+  console.log('Searching...')
+  arrOfBooks = arrOfBooks.filter((book) =>
+    book.title.toLowerCase().includes(searchInput.value.toLowerCase())
+  )
+  renderBookshelf()
+})
 
 //sort books by dropdown
 const sortButton = document.querySelector('.sort-button')
@@ -177,6 +167,9 @@ sortButton.addEventListener('click', function () {
   })
 
   // //sortButton style
+
+  // TODO:
+  // Change dropdown to display column
   sortButton.style.display = 'flex'
   sortButton.style.flex_direction = 'column'
 
