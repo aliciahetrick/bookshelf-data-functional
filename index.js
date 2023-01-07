@@ -49,13 +49,19 @@ function renderBookshelf() {
     subject.textContent = `Topics: ${book.subject}`
     subject.classList.add('book-genre')
 
+    const cardNav = document.createElement('section')
+    cardNav.classList.add('card-nav')
+
+    const cardBody = document.createElement('section')
+    cardBody.classList.add('card-body')
+
     // creates toggle topic buttton
     const toggleSubjectsOnButton = document.createElement('button')
     toggleSubjectsOnButton.textContent = 'Toggle topics '
     toggleSubjectsOnButton.classList.add('toggle-topics')
 
     const toggleSubjectsOffButton = document.createElement('button')
-    toggleSubjectsOffButton.textContent = 'Toggle book '
+    toggleSubjectsOffButton.textContent = 'Toggle Author'
     toggleSubjectsOffButton.classList.add('toggle-topics')
 
     toggleSubjectsOnButton.addEventListener('click', function () {
@@ -65,18 +71,31 @@ function renderBookshelf() {
 
       toggleSubjectsOnButton.remove()
 
-      bookCard.append(toggleSubjectsOffButton)
-      bookCard.append(title, subject)
+      cardNav.append(language, toggleSubjectsOffButton, favBook)
+      cardBody.append(image, title, subject)
+
+      cardNav.style.display = 'flex'
+      cardNav.style.gap = '2em'
+      bookCard.append(cardNav, cardBody)
+      bookCard.classList.add('subject-book-card')
+
+      console.log(bookCard)
     })
 
     toggleSubjectsOffButton.addEventListener('click', function () {
-      toggleSubjectsOffButton.remove()
-
-      bookCard.append(toggleSubjectsOnButton)
-      bookCard.append(toggleSubjectsOnButton, slicedTitle, image, author)
-
       subject.remove()
       title.remove()
+      image.remove()
+
+      toggleSubjectsOffButton.remove()
+
+      cardNav.append(language, toggleSubjectsOnButton, favBook)
+      cardBody.append(image, slicedTitle, author)
+
+      cardNav.style.display = 'flex'
+      cardNav.style.gap = '2em'
+      bookCard.append(cardNav, cardBody)
+      bookCard.classList.add('subject-book-card')
     })
 
     // creates and sets book language
@@ -98,10 +117,10 @@ function renderBookshelf() {
     })
 
     // appends book card elements to book card
-    const cardNav = document.createElement('section')
-    cardNav.classList.add('card-nav')
+
     cardNav.append(language, toggleSubjectsOnButton, favBook)
-    bookCard.append(cardNav, image, slicedTitle, author)
+    cardBody.append(image, slicedTitle, author)
+    bookCard.append(cardNav, cardBody)
 
     return bookCard
   })

@@ -46,6 +46,14 @@ main {
   align-items: center;
 }
 
+.search-button-svg {
+  color: black;
+  background-color: rgb(100, 118, 239);
+  font-family: Raleway;
+  font-weight: 600;
+  font-size: 15px;
+}
+
 .book-list {
   display: flex;
   flex-direction: row;
@@ -75,6 +83,12 @@ main {
 .card-nav {
   display: flex;
   gap: 2em;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .book-title {
@@ -168,6 +182,7 @@ main {
   color: rgb(100, 118, 239);
   border-radius: 1em;
   text-align: center;
+  padding: 3px;
 }
 
 ::placeholder {
