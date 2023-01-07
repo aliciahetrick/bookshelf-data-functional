@@ -41,6 +41,9 @@ sortButton.addEventListener('click', function () {
 
   topicContainer.style.display = 'flex'
   topicContainer.style.flexDirection = 'column'
+  topicContainer.style.borderRadius = '1em'
+  topicContainer.style.backgroundColor = 'rgb(100, 118, 239'
+  topicContainer.style.color = 'rgb(100, 118, 239'
 })
 
 // removes all dropdown sort options
@@ -75,6 +78,9 @@ descendTitleButton.addEventListener('click', function () {
   arrOfBooks = arrOfBooks.sort((a, b) => (a.title > b.title ? -1 : 1))
   renderBookshelf()
   removeSort()
+  sortButton.remove()
+  navbar.prepend(sortButton)
+  sortButton.removeAttribute('disabled')
 })
 
 // sort by author ascending
@@ -83,6 +89,9 @@ ascendAuthorButton.addEventListener('click', function () {
   arrOfBooks = arrOfBooks.sort((a, b) => (a.author[0] < b.author[0] ? -1 : 1))
   renderBookshelf()
   removeSort()
+  sortButton.remove()
+  navbar.prepend(sortButton)
+  sortButton.removeAttribute('disabled')
 })
 
 // sort by author descending
@@ -91,6 +100,9 @@ descendAuthorButton.addEventListener('click', function () {
   arrOfBooks = arrOfBooks.sort((a, b) => (a.author[0] > b.author[0] ? -1 : 1))
   renderBookshelf()
   removeSort()
+  sortButton.remove()
+  navbar.prepend(sortButton)
+  sortButton.removeAttribute('disabled')
 })
 
 // sort by most topics
@@ -99,6 +111,9 @@ sortByTopicsButton.addEventListener('click', function () {
   arrOfBooks = arrOfBooks.sort((a, b) => (a.subject.length > b.subject.length ? -1 : 1))
   renderBookshelf()
   removeSort()
+  sortButton.remove()
+  navbar.prepend(sortButton)
+  sortButton.removeAttribute('disabled')
 })
 
 // sort button style
@@ -122,4 +137,5 @@ selectStyle.map((element) => {
   element.style.fontFamily = 'raleway'
   element.style.padding = '10px'
   element.style.textTransform = 'uppercase'
+  element.style.borderRadius = '2em'
 })

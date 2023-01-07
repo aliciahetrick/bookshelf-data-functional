@@ -73,7 +73,7 @@ main {
 
 .search-input {
   all: unset;
-  background-color: rgb(231, 217, 249);
+  background-color: rgb(125, 136, 255);
   color: rgb(100, 118, 239);
   border-radius: 1em;
   text-align: center;
@@ -81,7 +81,7 @@ main {
 }
 
 ::placeholder {
-  color: rgb(100, 118, 239);
+  color: rgb(231, 217, 249);
   opacity: 1; /* Firefox */
   text-align: center;
   padding-left: 15px;
