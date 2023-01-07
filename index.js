@@ -86,43 +86,19 @@ function updateFavBookCount() {
   count.textContent = totalFavCount
 }
 
-// TODO:
-// search using filter
+// search through books for search input match
 const searchButton = document.querySelector('.search-button')
-
 const searchInput = document.querySelector('.search-input')
+
 searchButton.addEventListener('click', function () {
-  console.log('Searching...')
   const searchQuery = searchInput.value.toLowerCase()
-  // TODO:
-  // add search for
 
-  // try to return all filtered items using a loop instead of .filter
-  // let filteredArr = []
-  // for (const book of arrOfBooks) {
-  //   if (book.title.toLowerCase().includes(searchQuery)) {
-  //     filteredArr.push(book)
-  //   } else if () {
-
-  //   }
-  //   console.log(filteredArr)
-  // }
-
-  // works
   arrOfBooks = arrOfBooks.filter(
     (book) =>
       book.title.toLowerCase().includes(searchQuery) ||
-      book.author[0].toLowerCase().includes(searchQuery)
+      book.author[0].toLowerCase().includes(searchQuery) ||
+      book.subject[0].toLowerCase().includes(searchQuery)
   )
-
-  //does not work
-  // for (let i = 0; i < book.subject.length; i ++) {
-  //   book.subject[i].toLowerCase().includes(searchQuery)
-  // }
-  // book.subject.toLowerCase().includes(searchQuery)
-  // )
-  console.log(arrOfBooks)
-  console.log(arrOfBooks[0].subject[0])
 
   renderBookshelf()
 })
