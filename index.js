@@ -109,10 +109,11 @@ searchButton.addEventListener('click', function () {
   // }
 
   // works
-  // arrOfBooks = arrOfBooks.filter(
-  //   (book) =>
-  //     book.title.toLowerCase().includes(searchQuery) ||
-  //     book.author[0].toLowerCase().includes(searchQuery)
+  arrOfBooks = arrOfBooks.filter(
+    (book) =>
+      book.title.toLowerCase().includes(searchQuery) ||
+      book.author[0].toLowerCase().includes(searchQuery)
+  )
 
   //does not work
   // for (let i = 0; i < book.subject.length; i ++) {
@@ -161,17 +162,31 @@ sortButton.addEventListener('click', function () {
     sortByTopicsButton
   )
 
+  function removeSort() {
+    ascendTitleButton.remove()
+    descendTitleButton.remove()
+    ascendAuthorButton.remove()
+    descendAuthorButton.remove()
+    sortByTopicsButton.remove()
+  }
+
   // sort by title ascending
   ascendTitleButton.addEventListener('click', function () {
     console.log('A to z Title Button')
     arrOfBooks = arrOfBooks.sort((a, b) => (a.title < b.title ? -1 : 1))
     renderBookshelf()
+    removeSort()
+    // TODO:
+    // when sort by option clicked, sort button becomes clickable again
+    // sortButton.disabled = false
+    // sortButton.setAttribute('disabled', 'false')
   })
 
   // sort by title descending
   descendTitleButton.addEventListener('click', function () {
     arrOfBooks = arrOfBooks.sort((a, b) => (a.title > b.title ? -1 : 1))
     renderBookshelf()
+    removeSort()
   })
 
   // sort by author ascending
@@ -179,6 +194,7 @@ sortButton.addEventListener('click', function () {
     console.log('A to Z Author Button')
     arrOfBooks = arrOfBooks.sort((a, b) => (a.author[0] < b.author[0] ? -1 : 1))
     renderBookshelf()
+    removeSort()
   })
 
   // sort by author descending
@@ -186,6 +202,7 @@ sortButton.addEventListener('click', function () {
     console.log('Z to A Author Button')
     arrOfBooks = arrOfBooks.sort((a, b) => (a.author[0] > b.author[0] ? -1 : 1))
     renderBookshelf()
+    removeSort()
   })
 
   // sort by most topics
@@ -193,6 +210,7 @@ sortButton.addEventListener('click', function () {
     console.log('Sort By Topics')
     arrOfBooks = arrOfBooks.sort((a, b) => (a.subject.length > b.subject.length ? -1 : 1))
     renderBookshelf()
+    removeSort()
   })
 
   // //sortButton style
@@ -200,7 +218,8 @@ sortButton.addEventListener('click', function () {
   // TODO:
   // Change dropdown to display column
   sortButton.style.display = 'flex'
-  sortButton.style.flex_direction = 'column'
+  sortButton.style.flexDirection = 'column'
+  sortButton.st
 
   let selectStyle = [
     ascendTitleButton,
@@ -213,11 +232,10 @@ sortButton.addEventListener('click', function () {
   selectStyle.map((element) => {
     element.style.all = 'unset'
     element.style.color = 'rgb(231, 217, 249)'
-    element.backgroundColor = 'rgb(100, 118, 239'
-    element.fontFamily = 'raleway'
+    element.style.backgroundColor = 'rgb(100, 118, 239'
+    element.style.fontFamily = 'raleway'
+    element.style.padding = '10px'
   })
-  ascendTitleButton.style.all = 'unset'
-  ascendTitleButton.style.color = 'rgb(231, 217, 249)'
-  ascendTitleButton.backgroundColor = 'rgb(100, 118, 239'
-  ascendTitleButton.fontFamily = 'raleway'
 })
+
+//once you click on
