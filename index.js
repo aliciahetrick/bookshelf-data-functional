@@ -111,11 +111,24 @@ function renderBookshelf() {
 
     // toggles favorite button
     favBook.addEventListener('click', () => {
+      'clicked heart'
       book.isFavorite = !book.isFavorite
       favBook.textContent = book.isFavorite ? '♥' : '♡'
       updateFavBookCount()
     })
 
+    function updateFavBookCount() {
+      const count = document.querySelector('.fav-books-count')
+      const totalFavCount = arrOfBooks.reduce(function (accumulator, currentBook) {
+        if (currentBook.isFavorite) {
+          return accumulator + 1
+        } else {
+          return accumulator
+        }
+      }, 0)
+
+      count.textContent = totalFavCount
+    }
     // appends book card elements to book card
 
     cardNav.append(language, toggleSubjectsOnButton, favBook)
