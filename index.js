@@ -30,6 +30,9 @@ function renderBookshelf() {
     const title = document.createElement('p')
     title.textContent = book.title
     title.classList.add('book-title')
+    const slicedTitle = document.createElement('p')
+    slicedTitle.textContent = `${book.title.slice(0, 50)}...`
+    slicedTitle.classList.add('book-title')
 
     // creates and sets book image
     const image = document.createElement('img')
@@ -48,29 +51,32 @@ function renderBookshelf() {
 
     // creates toggle topic buttton
     const toggleSubjectsOnButton = document.createElement('button')
-    toggleSubjectsOnButton.textContent = 'Toggle topics'
+    toggleSubjectsOnButton.textContent = 'Toggle topics '
+    toggleSubjectsOnButton.classList.add('toggle-topics')
 
     const toggleSubjectsOffButton = document.createElement('button')
-    toggleSubjectsOffButton.textContent = 'Toggle book'
+    toggleSubjectsOffButton.textContent = 'Toggle book '
+    toggleSubjectsOffButton.classList.add('toggle-topics')
 
     toggleSubjectsOnButton.addEventListener('click', function () {
-      console.log('toggle clicked')
-      title.remove()
+      slicedTitle.remove()
       image.remove()
       author.remove()
 
       toggleSubjectsOnButton.remove()
 
       bookCard.append(toggleSubjectsOffButton)
-      bookCard.append(subject)
+      bookCard.append(title, subject)
     })
 
     toggleSubjectsOffButton.addEventListener('click', function () {
       toggleSubjectsOffButton.remove()
 
       bookCard.append(toggleSubjectsOnButton)
-      bookCard.append(toggleSubjectsOnButton, title, image, author)
+      bookCard.append(toggleSubjectsOnButton, slicedTitle, image, author)
+
       subject.remove()
+      title.remove()
     })
 
     // creates and sets book language
@@ -78,15 +84,11 @@ function renderBookshelf() {
     language.textContent = book.language
     language.classList.add('book-language')
 
-    // appends book card elements to book card
-    // bookCard.append(language, title, image, author, subject)
-    bookCard.append(language, toggleSubjectsOnButton, title, image, author)
-
     // creates and renders favorite button
     const favBook = document.createElement('p')
     favBook.classList.add('fav-book-heart-button')
     favBook.textContent = book.isFavorite ? '♥' : '♡'
-    bookCard.prepend(favBook)
+    bookCard.append(favBook)
 
     // toggles favorite button
     favBook.addEventListener('click', () => {
@@ -94,6 +96,12 @@ function renderBookshelf() {
       favBook.textContent = book.isFavorite ? '♥' : '♡'
       updateFavBookCount()
     })
+
+    // appends book card elements to book card
+    const cardNav = document.createElement('section')
+    cardNav.classList.add('card-nav')
+    cardNav.append(language, toggleSubjectsOnButton, favBook)
+    bookCard.append(cardNav, image, slicedTitle, author)
 
     return bookCard
   })
