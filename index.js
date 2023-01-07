@@ -41,18 +41,46 @@ function renderBookshelf() {
     author.textContent = book.author
     author.classList.add('book-author')
 
-    // creates and sets book genre
+    // creates and sets book topics
     const subject = document.createElement('p')
     subject.textContent = `Topics: ${book.subject}`
     subject.classList.add('book-genre')
 
-    // creates and sest book language
+    // creates toggle topic buttton
+    const toggleSubjectsOnButton = document.createElement('button')
+    toggleSubjectsOnButton.textContent = 'Toggle topics'
+
+    const toggleSubjectsOffButton = document.createElement('button')
+    toggleSubjectsOffButton.textContent = 'Toggle book'
+
+    toggleSubjectsOnButton.addEventListener('click', function () {
+      console.log('toggle clicked')
+      title.remove()
+      image.remove()
+      author.remove()
+
+      toggleSubjectsOnButton.remove()
+
+      bookCard.append(toggleSubjectsOffButton)
+      bookCard.append(subject)
+    })
+
+    toggleSubjectsOffButton.addEventListener('click', function () {
+      toggleSubjectsOffButton.remove()
+
+      bookCard.append(toggleSubjectsOnButton)
+      bookCard.append(toggleSubjectsOnButton, title, image, author)
+      subject.remove()
+    })
+
+    // creates and sets book language
     const language = document.createElement('p')
     language.textContent = book.language
     language.classList.add('book-language')
 
     // appends book card elements to book card
-    bookCard.append(language, title, image, author, subject)
+    // bookCard.append(language, title, image, author, subject)
+    bookCard.append(language, toggleSubjectsOnButton, title, image, author)
 
     // creates and renders favorite button
     const favBook = document.createElement('p')
