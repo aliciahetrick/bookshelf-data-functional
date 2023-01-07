@@ -40,7 +40,7 @@ function renderBookshelf() {
 
     //create and set book genre
     const subject = document.createElement('p')
-    subject.textContent = `Genre: ${book.subject}`
+    subject.textContent = `Topics: ${book.subject}`
     subject.classList.add('book-genre')
 
     //create and set book language
@@ -88,18 +88,40 @@ function updateFavBookCount() {
 // TODO:
 // search using filter
 const searchButton = document.querySelector('.search-button')
+
 const searchInput = document.querySelector('.search-input')
 searchButton.addEventListener('click', function () {
   console.log('Searching...')
   const searchQuery = searchInput.value.toLowerCase()
   // TODO:
-  // add comapares for author and subject
-  arrOfBooks = arrOfBooks.filter(
-    (book) => book.title.toLowerCase().includes(searchQuery)
-    // book.author.toLowerCase().includes(searchQuery) +
-    // book.subject.toLowerCase().includes(searchQuery)
-  )
+  // add search for
+
+  // try to return all filtered items using a loop instead of .filter
+  // let filteredArr = []
+  // for (const book of arrOfBooks) {
+  //   if (book.title.toLowerCase().includes(searchQuery)) {
+  //     filteredArr.push(book)
+  //   } else if () {
+
+  //   }
+  //   console.log(filteredArr)
+  // }
+
+  // works
+  // arrOfBooks = arrOfBooks.filter(
+  //   (book) =>
+  //     book.title.toLowerCase().includes(searchQuery) ||
+  //     book.author[0].toLowerCase().includes(searchQuery)
+
+  //does not work
+  // for (let i = 0; i < book.subject.length; i ++) {
+  //   book.subject[i].toLowerCase().includes(searchQuery)
+  // }
+  // book.subject.toLowerCase().includes(searchQuery)
+  // )
   console.log(arrOfBooks)
+  console.log(arrOfBooks[0].subject[0])
+
   renderBookshelf()
 })
 

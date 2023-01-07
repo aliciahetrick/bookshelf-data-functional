@@ -133,3 +133,28 @@ main {
 .sort-Button > li {
   margin: 2em;
 }
+
+.search-input {
+  all: unset;
+  background-color: rgb(231, 217, 249);
+  color: rgb(100, 118, 239);
+  border-radius: 1em;
+  text-align: center;
+}
+
+::placeholder {
+  color: rgb(100, 118, 239);
+  opacity: 1; /* Firefox */
+  text-align: center;
+  padding-left: 15px;
+}
+
+.search-button {
+  all: unset;
+  color: rgb(231, 217, 249);
+  background-color: rgb(100, 118, 239);
+  font-family: Raleway;
+  font-weight: 600;
+  font-size: 15px;
+  text-transform: uppercase;
+}
