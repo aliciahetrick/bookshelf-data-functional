@@ -54,6 +54,10 @@ function renderBookshelf() {
       cardNav.append(language, toggleSubjectsOffButton, favBook)
       cardBody.append(subject)
       bookCard.append(cardNav, cardBody)
+
+      // styling
+      subject.style.paddingLeft = '1em'
+      subject.style.paddingRight = '1em'
     })
 
     toggleSubjectsOffButton.addEventListener('click', function () {
