@@ -10,9 +10,6 @@ function renderBookshelf() {
     const title = document.createElement('p')
     title.textContent = book.title
     title.classList.add('book-title')
-    const slicedTitle = document.createElement('p')
-    slicedTitle.textContent = `${book.title.slice(0, 50)}...`
-    slicedTitle.classList.add('book-title')
 
     // creates and sets book image
     const image = document.createElement('img')
@@ -46,7 +43,7 @@ function renderBookshelf() {
     toggleSubjectsOffButton.classList.add('toggle-topics')
 
     toggleSubjectsOnButton.addEventListener('click', function () {
-      slicedTitle.remove()
+      title.remove()
       image.remove()
       author.remove()
 
@@ -74,7 +71,7 @@ function renderBookshelf() {
       toggleSubjectsOffButton.remove()
 
       cardNav.append(language, toggleSubjectsOnButton, favBook)
-      cardBody.append(image, slicedTitle, author)
+      cardBody.append(image, title, author)
 
       subject.style.textTransform = 'uppercase'
       cardNav.style.display = 'flex'
@@ -117,7 +114,7 @@ function renderBookshelf() {
     // appends book card elements to book card
 
     cardNav.append(language, toggleSubjectsOnButton, favBook)
-    cardBody.append(image, slicedTitle, author)
+    cardBody.append(image, title, author)
     bookCard.append(cardNav, cardBody)
 
     return bookCard

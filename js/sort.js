@@ -14,7 +14,10 @@ sortDropdown.addEventListener('change', function () {
   } else if (sortDropdown.value === 'descending-author') {
     arrOfBooks = arrOfBooks.sort((a, b) => (a.author[0] > b.author[0] ? -1 : 1))
     renderBookshelf()
-  } else if (sortDropdown.value === 'sort-by-topics') {
+  } else if (sortDropdown.value === 'sort-by-least-topics') {
+    arrOfBooks = arrOfBooks.sort((a, b) => (a.subject.length < b.subject.length ? -1 : 1))
+    renderBookshelf()
+  } else if (sortDropdown.value === 'sort-by-most-topics') {
     arrOfBooks = arrOfBooks.sort((a, b) => (a.subject.length > b.subject.length ? -1 : 1))
     renderBookshelf()
   }
