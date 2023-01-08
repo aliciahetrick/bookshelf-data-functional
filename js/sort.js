@@ -27,7 +27,7 @@ sortButton.addEventListener('click', function () {
   sortButton.disabled = !sortButton.disabled
 
   // appends sort by buttons to main sort by button
-  sortButton.after(topicContainer)
+  sortButton.append(topicContainer)
 
   topicContainer.append(
     ascendTitleButton,
@@ -39,11 +39,27 @@ sortButton.addEventListener('click', function () {
 
   console.log(sortButton)
 
+  sortButton.style.border = '1px solid black'
+  sortButton.style.display = 'flex'
+  sortButton.style.textAlign = 'center'
+  sortButton.style.fontSize = '15px'
+  sortButton.style.textTransform = 'uppercase'
+
+  // flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
+
+  // color: rgb(231, 217, 249);
+  // font-family: Raleway;
+
   topicContainer.style.display = 'flex'
   topicContainer.style.flexDirection = 'column'
+  topicContainer.style.alignItems = 'center'
   topicContainer.style.borderRadius = '1em'
   topicContainer.style.backgroundColor = 'rgb(100, 118, 239'
   topicContainer.style.color = 'rgb(100, 118, 239'
+  topicContainer.style.border = '1px solid yellow'
+  topicContainer.style.zIndex = '1'
 })
 
 // removes all dropdown sort options
@@ -71,6 +87,8 @@ ascendTitleButton.addEventListener('click', function () {
   sortButton.remove()
   navbar.prepend(sortButton)
   sortButton.removeAttribute('disabled')
+  console.log(topicContainer)
+  topicContainer.remove()
 })
 
 // sort by title descending
@@ -119,7 +137,16 @@ sortByTopicsButton.addEventListener('click', function () {
 // sort button style
 sortButton.style.display = 'flex'
 sortButton.style.flexDirection = 'column'
-sortButton.style.border = '1px solid red'
+sortButton.style.alignItems = 'center'
+sortButton.style.fontSize = '15px'
+sortButton.style.fontWeight = '600px'
+sortButton.style.all = 'unset'
+
+// color: rgb(231, 217, 249);
+// background-color: rgb(100, 118, 239);
+// font-family: Raleway;
+
+// text-transform: uppercase;
 
 // sort dropdown option style
 let selectStyle = [

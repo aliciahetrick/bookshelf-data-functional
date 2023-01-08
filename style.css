@@ -41,24 +41,24 @@ main {
   text-transform: uppercase;
 
   z-index: 1;
+
   padding: 3em;
 }
 
 .sort-button {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-  all: unset;
   color: rgb(231, 217, 249);
-  background-color: rgb(100, 118, 239);
   font-family: Raleway;
-  font-weight: 600;
   font-size: 15px;
   text-transform: uppercase;
 }
 
-.sort-Button > li {
-  margin: 2em;
+.sort-button-container {
+  border: 1px solid pink;
 }
 
 /* center nav */
