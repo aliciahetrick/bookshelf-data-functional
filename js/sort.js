@@ -35,11 +35,18 @@ sortButton.addEventListener('click', function () {
     sortByTopicsButton
   )
 
-  sortButton.style.border = '1px solid black'
-  sortButton.style.display = 'flex'
-  sortButton.style.textAlign = 'center'
+  // sortButton.style.border = '1px solid black'
+  ;(sortButton.style.display = 'flex'),
+    (sortButton.style.flexDirection = 'column'),
+    (sortButton.style.justifyContent = 'center'),
+    (sortButton.style.textAlign = 'center')
   sortButton.style.fontSize = '15px'
   sortButton.style.textTransform = 'uppercase'
+
+  // align-items: center;
+
+  // color: rgb(231, 217, 249);
+  // font-family: Raleway;
 
   // flex-direction: column;
   // justify-content: center;
@@ -55,7 +62,7 @@ sortButton.addEventListener('click', function () {
   topicContainer.style.backgroundColor = 'rgb(100, 118, 239'
   topicContainer.style.color = 'rgb(100, 118, 239'
   // topicContainer.style.border = '1px solid yellow'
-  topicContainer.style.paddingTop = '4em'
+  topicContainer.style.paddingTop = '1em'
   topicContainer.style.zIndex = '1'
 })
 
