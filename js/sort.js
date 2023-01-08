@@ -1,6 +1,4 @@
 const sortButton = document.querySelector('.sort-button')
-
-const sortButtonContainer = document.querySelector('sort-button-container')
 const navbar = document.querySelector('.navbar')
 
 const topicContainer = document.createElement('section')
@@ -36,8 +34,6 @@ sortButton.addEventListener('click', function () {
     descendAuthorButton,
     sortByTopicsButton
   )
-
-  console.log(sortButton)
 
   sortButton.style.border = '1px solid black'
   sortButton.style.display = 'flex'
@@ -81,15 +77,12 @@ function toggleSort() {
 
 // sorts by title ascending
 ascendTitleButton.addEventListener('click', function () {
-  console.log('A to z Title Button')
   arrOfBooks = arrOfBooks.sort((a, b) => (a.title < b.title ? -1 : 1))
   renderBookshelf()
   removeSort()
   sortButton.remove()
   navbar.prepend(sortButton)
   sortButton.removeAttribute('disabled')
-  console.log(topicContainer)
-  topicContainer.remove()
 })
 
 // sort by title descending
