@@ -43,41 +43,21 @@ function renderBookshelf() {
     toggleSubjectsOffButton.classList.add('toggle-topics')
 
     toggleSubjectsOnButton.addEventListener('click', function () {
-      title.remove()
-      image.remove()
       author.remove()
-
       toggleSubjectsOnButton.remove()
 
       cardNav.append(language, toggleSubjectsOffButton, favBook)
-      cardBody.append(image, title, subject)
-
-      cardNav.style.display = 'flex'
-      cardNav.style.gap = '2em'
+      cardBody.append(subject)
       bookCard.append(cardNav, cardBody)
-      bookCard.classList.add('subject-book-card')
-
-      cardBody.style.paddingLeft = '1em'
-      cardBody.style.paddingRight = '1em'
-
-      console.log(bookCard)
     })
 
     toggleSubjectsOffButton.addEventListener('click', function () {
       subject.remove()
-      title.remove()
-      image.remove()
-
       toggleSubjectsOffButton.remove()
 
       cardNav.append(language, toggleSubjectsOnButton, favBook)
-      cardBody.append(image, title, author)
-
-      subject.style.textTransform = 'uppercase'
-      cardNav.style.display = 'flex'
-      cardNav.style.gap = '2em'
+      cardBody.append(author)
       bookCard.append(cardNav, cardBody)
-      bookCard.classList.add('subject-book-card')
     })
 
     // creates and sets book language
@@ -111,8 +91,8 @@ function renderBookshelf() {
 
       count.textContent = totalFavCount
     }
-    // appends book card elements to book card
 
+    // appends book card elements to book card
     cardNav.append(language, toggleSubjectsOnButton, favBook)
     cardBody.append(image, title, author)
     bookCard.append(cardNav, cardBody)

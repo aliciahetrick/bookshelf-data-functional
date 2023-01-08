@@ -1,4 +1,5 @@
 /* general */
+
 * {
   box-sizing: border-box;
 }
@@ -19,17 +20,20 @@ main {
   font-family: Raleway;
 }
 
+/* ------------------------- */
+
 /* navbar */
 
 .navbar {
   display: flex;
   justify-content: space-around;
-  /* align-items: center; */
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
   height: 8em;
+  z-index: 1;
+  padding: 3em;
 
   color: rgb(231, 217, 249);
   background-color: rgb(100, 118, 239);
@@ -37,19 +41,16 @@ main {
   font-weight: 600;
   font-size: 15px;
   text-transform: uppercase;
-
-  z-index: 1;
-
-  padding: 3em;
 }
 
-/* left nav */
+/* left nav / sort */
 
 .sort-container {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
+
 .sort-button {
   color: rgb(231, 217, 249);
   font-family: Raleway;
@@ -58,21 +59,21 @@ main {
 }
 
 .sort-dropdown {
+  margin-left: 15px;
+  padding: 0.5em;
+  border-radius: 1em;
+  text-align: center;
+
   color: rgb(231, 217, 249);
   background-color: rgb(125, 136, 255);
   border: 1px solid rgb(125, 136, 255);
-  border-radius: 1em;
-  /* all: unset; */
-  text-align: center;
   font-family: Raleway;
   font-weight: 600;
   font-size: 15px;
   text-transform: uppercase;
-  margin-left: 15px;
-  padding: 0.5em;
 }
 
-/* center nav */
+/* center nav / favorite books count */
 
 .center-nav {
   display: flex;
@@ -80,28 +81,28 @@ main {
   align-items: center;
 }
 
-/* right nav  */
+/* right nav / search  */
 
 .search-input {
   all: unset;
-  background-color: rgb(125, 136, 255);
-  color: rgb(231, 217, 249);
-  border-radius: 1em;
-  text-align: center;
-  padding: 3px;
   margin-right: 0.5em;
   padding: 0.5em;
+
+  background-color: rgb(125, 136, 255);
+  color: rgb(231, 217, 249);
+  text-align: center;
+  border-radius: 1em;
 }
 
 ::placeholder {
   color: rgb(231, 217, 249);
-  opacity: 1; /* Firefox */
   text-align: center;
   padding-left: 15px;
 }
 
 .search-button {
   all: unset;
+
   color: rgb(231, 217, 249);
   background-color: rgb(100, 118, 239);
   font-family: Raleway;
@@ -110,14 +111,15 @@ main {
   text-transform: uppercase;
 }
 
-/* cards */
+/* ------------------------- */
+
+/* book cards */
 
 .book-list {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-
   gap: 3em;
   margin-bottom: 10em;
   margin-top: 10em;
@@ -127,18 +129,16 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-
   align-items: center;
   width: 300px;
   height: 400px;
   background-color: rgb(208, 208, 250);
   border-radius: 2em;
-
   padding-top: 2em;
   padding-bottom: 2em;
 }
 
-/* card nav */
+/* book card nav */
 
 .card-nav {
   display: flex;
@@ -146,29 +146,33 @@ main {
 }
 
 .book-language {
-  /* position: absolute; */
-  /* background-color: rgb(231, 217, 249); */
-
+  max-width: 70px;
   border-radius: 8px;
   font-weight: 600px;
   font-size: 15px;
   text-transform: uppercase;
-  max-width: 70px;
-  /* margin-right: 13em; */
+}
+
+.toggle-topics {
+  all: unset;
+
+  color: rgb(100, 118, 239);
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 15px;
+  text-transform: uppercase;
 }
 
 .fav-book-heart-button {
-  /* position: absolute; */
-
+  max-width: 70px;
   border-radius: 8px;
   font-weight: 800px;
   font-size: 15px;
   text-transform: uppercase;
-  max-width: 70px;
-  /* margin-left: 13em; */
 }
 
-/* card body */
+/* book card body */
 
 .card-body {
   display: flex;
@@ -181,41 +185,33 @@ main {
 }
 
 .book-title {
+  margin-bottom: 0px;
+  padding-left: 30px;
+  padding-right: 1em;
+
   font-weight: 800;
   font-size: 20px;
   text-transform: uppercase;
   text-align: center;
-  margin-bottom: 0px;
-  padding-left: 30px;
-  padding-right: 1em;
 }
 
 .book-author {
+  padding-left: 30px;
+  padding-right: 1em;
+
   font-weight: 600;
   font-size: 15px;
   text-transform: uppercase;
   text-align: center;
-  padding-left: 30px;
-  padding-right: 1em;
 }
 
 .book-genre {
-  font-weight: 600;
-  font-size: 15px;
   display: flex;
-  justify-content: center;
-  text-align: center;
   align-items: center;
   height: 100%;
-}
+  justify-content: center;
 
-.toggle-topics {
-  all: unset;
-
-  color: rgb(100, 118, 239);
   text-align: center;
-  text-transform: uppercase;
-  font-weight: 800;
+  font-weight: 600;
   font-size: 15px;
-  text-transform: uppercase;
 }
