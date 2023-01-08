@@ -48,6 +48,7 @@ function renderBookshelf() {
     const subject = document.createElement('p')
     subject.textContent = `Topics: ${book.subject}`
     subject.classList.add('book-genre')
+    subject.style.textTransform = 'uppercase'
 
     const cardNav = document.createElement('section')
     cardNav.classList.add('card-nav')
@@ -79,6 +80,9 @@ function renderBookshelf() {
       bookCard.append(cardNav, cardBody)
       bookCard.classList.add('subject-book-card')
 
+      cardBody.style.paddingLeft = '1em'
+      cardBody.style.paddingRight = '1em'
+
       console.log(bookCard)
     })
 
@@ -92,6 +96,7 @@ function renderBookshelf() {
       cardNav.append(language, toggleSubjectsOnButton, favBook)
       cardBody.append(image, slicedTitle, author)
 
+      subject.style.textTransform = 'uppercase'
       cardNav.style.display = 'flex'
       cardNav.style.gap = '2em'
       bookCard.append(cardNav, cardBody)
