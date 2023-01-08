@@ -16,7 +16,18 @@
     <nav class="navbar">
       <!-- left sort button -->
 
-      <button class="sort-button">Sort Books By:</button>
+      <section class="sort-container">
+        <label for="sort-button">Sort</label>
+        <select name="sort" class="sort-dropdown">
+          <option value="">by</option>
+          <option class="ascending-title" value="ascending-title">Title (A to Z)</option>
+          <option class="descending-title" value="descending-title">Title (Z to A)</option>
+          <option class="ascending-author" value="ascending-author">Author (A to Z)</option>
+          <option class="descending-author" value="descending-author">Author (Z to A)</option>
+          <option class="sort-by-topics" value="sort-by-topics">Sort by most Topics</option>
+        </select>
+      </section>
+
       <!-- center title and favorites -->
       <section class="center-nav">
         <span class="my-library">Alicia's Library </span>
@@ -27,7 +38,7 @@
       <section class="search">
         <input type="search" placeholder="Search" class="search-input" />
         <button class="search-button">
-          GO
+          Query
           <!-- <span class="material-symbols-outlined search-button"> Search </span> -->
         </button>
       </section>

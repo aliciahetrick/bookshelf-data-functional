@@ -21,7 +21,6 @@ main {
 
 /* navbar */
 
-/* left nav */
 .navbar {
   display: flex;
   justify-content: space-around;
@@ -44,16 +43,32 @@ main {
   padding: 3em;
 }
 
-.sort-button {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+/* left nav */
 
+.sort-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.sort-button {
   color: rgb(231, 217, 249);
   font-family: Raleway;
   font-size: 15px;
   text-transform: uppercase;
+}
+
+.sort-dropdown {
+  color: rgb(231, 217, 249);
+  background-color: rgb(125, 136, 255);
+  border: 1px solid rgb(125, 136, 255);
+  border-radius: 1em;
+  /* all: unset; */
+  text-align: center;
+  font-family: Raleway;
+  font-weight: 600;
+  font-size: 15px;
+  text-transform: uppercase;
+  margin-left: 15px;
 }
 
 /* center nav */
