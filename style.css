@@ -69,6 +69,7 @@ main {
   font-size: 15px;
   text-transform: uppercase;
   margin-left: 15px;
+  padding: 0.5em;
 }
 
 /* center nav */
@@ -89,6 +90,7 @@ main {
   text-align: center;
   padding: 3px;
   margin-right: 0.5em;
+  padding: 0.5em;
 }
 
 ::placeholder {
