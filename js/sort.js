@@ -58,7 +58,8 @@ sortButton.addEventListener('click', function () {
   topicContainer.style.borderRadius = '1em'
   topicContainer.style.backgroundColor = 'rgb(100, 118, 239'
   topicContainer.style.color = 'rgb(100, 118, 239'
-  topicContainer.style.border = '1px solid yellow'
+  // topicContainer.style.border = '1px solid yellow'
+  topicContainer.style.paddingTop = '4em'
   topicContainer.style.zIndex = '1'
 })
 

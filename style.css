@@ -31,7 +31,6 @@ main {
   right: 0;
   left: 0;
   height: 8em;
-  gap: 1em;
 
   color: rgb(231, 217, 249);
   background-color: rgb(100, 118, 239);
@@ -74,10 +73,11 @@ main {
 .search-input {
   all: unset;
   background-color: rgb(125, 136, 255);
-  color: rgb(100, 118, 239);
+  color: rgb(231, 217, 249);
   border-radius: 1em;
   text-align: center;
   padding: 3px;
+  margin-right: 0.5em;
 }
 
 ::placeholder {
@@ -173,7 +173,7 @@ main {
   text-transform: uppercase;
   text-align: center;
   margin-bottom: 0px;
-  padding-left: 1em;
+  padding-left: 30px;
   padding-right: 1em;
 }
 
