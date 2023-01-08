@@ -1,7 +1,7 @@
 const sortDropdown = document.querySelector('.sort-dropdown')
 
+// sorts books when dropdown option selected
 sortDropdown.addEventListener('change', function () {
-  console.log('changed')
   if (sortDropdown.value === 'ascending-title') {
     arrOfBooks = arrOfBooks.sort((a, b) => (a.title < b.title ? -1 : 1))
     renderBookshelf()

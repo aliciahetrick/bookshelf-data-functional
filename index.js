@@ -27,34 +27,41 @@ function renderBookshelf() {
     subject.classList.add('book-genre')
     subject.style.textTransform = 'uppercase'
 
+    // creates card navbar container
     const cardNav = document.createElement('section')
     cardNav.classList.add('card-nav')
 
+    // creates card body container
     const cardBody = document.createElement('section')
     cardBody.classList.add('card-body')
 
-    // creates toggle topic buttton
+    // creates and sets toggle topic button on
     const toggleSubjectsOnButton = document.createElement('button')
     toggleSubjectsOnButton.textContent = 'Toggle topics '
     toggleSubjectsOnButton.classList.add('toggle-topics')
 
+    // creates and sets toggle topic button off
     const toggleSubjectsOffButton = document.createElement('button')
     toggleSubjectsOffButton.textContent = 'Toggle Author'
     toggleSubjectsOffButton.classList.add('toggle-topics')
 
     toggleSubjectsOnButton.addEventListener('click', function () {
+      // remove elements
       author.remove()
       toggleSubjectsOnButton.remove()
 
+      // append elements
       cardNav.append(language, toggleSubjectsOffButton, favBook)
       cardBody.append(subject)
       bookCard.append(cardNav, cardBody)
     })
 
     toggleSubjectsOffButton.addEventListener('click', function () {
+      // remove elements
       subject.remove()
       toggleSubjectsOffButton.remove()
 
+      // append elements
       cardNav.append(language, toggleSubjectsOnButton, favBook)
       cardBody.append(author)
       bookCard.append(cardNav, cardBody)
@@ -79,6 +86,9 @@ function renderBookshelf() {
       updateFavBookCount()
     })
 
+    /**
+     * updates favorite book counter
+     */
     function updateFavBookCount() {
       const count = document.querySelector('.fav-books-count')
       const totalFavCount = arrOfBooks.reduce(function (accumulator, currentBook) {

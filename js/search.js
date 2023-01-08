@@ -1,7 +1,3 @@
-// TODO:
-// currently only searches through clean words
-// (ex: words after a space, not string of letters within a word)
-
 const searchButton = document.querySelector('.search-button')
 const searchInput = document.querySelector('.search-input')
 

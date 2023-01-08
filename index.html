@@ -14,8 +14,7 @@
   </head>
   <body>
     <nav class="navbar">
-      <!-- left sort button -->
-
+      <!-- left nav sort button -->
       <section class="sort-container">
         <label for="sort-button">Sort</label>
         <select name="sort" class="sort-dropdown">
@@ -25,21 +24,19 @@
           <option class="ascending-author" value="ascending-author">Author (A to Z)</option>
           <option class="descending-author" value="descending-author">Author (Z to A)</option>
           <option class="sort-by-most-topics" value="sort-by-most-topics">
-            Sort by most Topics
+            Sort by most topics
           </option>
           <option class="sort-by-least-topics" value="sort-by-least-topics">
-            Sort by least Topics
+            Sort by least topics
           </option>
         </select>
       </section>
-
-      <!-- center title and favorites -->
+      <!-- center nav title and favorite count -->
       <section class="center-nav">
         <span class="my-library">Alicia's Library </span>
         <span> ♥ <span class="fav-books-count">0</span></span>
       </section>
-      <!-- right search box -->
-      <!-- TODO: Search -->
+      <!-- right nav search box -->
       <section class="search">
         <input type="search" placeholder="Search" class="search-input" />
         <button class="search-button">
@@ -48,9 +45,11 @@
         </button>
       </section>
     </nav>
+    <!-- book cards -->
     <section>
       <main class="book-list"></main>
     </section>
+    <!-- scripts -->
     <script src="js/book-data.js"></script>
     <script src="js/create-books.js"></script>
     <script src="js/search.js"></script>
