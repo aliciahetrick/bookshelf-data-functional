@@ -6,14 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>bookshelf-data</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
   </head>
   <body>
     <nav class="navbar">
       <!-- left nav sort button -->
       <section class="sort-container">
-        <label for="sort-button">Sort</label>
+        <label for="sort-button"><span class="material-symbols-outlined"> sort </span></label>
         <select name="sort" class="sort-dropdown">
-          <option value="">by</option>
+          <option value="">sort</option>
           <option class="ascending-title" value="ascending-title">Title (A to Z)</option>
           <option class="descending-title" value="descending-title">Title (Z to A)</option>
           <option class="ascending-author" value="ascending-author">Author (A to Z)</option>
@@ -34,7 +42,9 @@
       <!-- right nav search box -->
       <section class="search">
         <input type="search" placeholder="Search" class="search-input" />
-        <button class="search-button">Query</button>
+        <button class="search-button">
+          <span class="material-symbols-outlined"> search </span>
+        </button>
       </section>
     </nav>
     <!-- book cards -->
