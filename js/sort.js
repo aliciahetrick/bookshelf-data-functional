@@ -36,10 +36,10 @@ sortButton.addEventListener('click', function () {
   )
 
   // sortButton.style.border = '1px solid black'
-  ;(sortButton.style.display = 'flex'),
-    (sortButton.style.flexDirection = 'column'),
-    (sortButton.style.justifyContent = 'center'),
-    (sortButton.style.textAlign = 'center')
+  sortButton.style.display = 'flex'
+  sortButton.style.flexDirection = 'column'
+  sortButton.style.justifyContent = 'center'
+  sortButton.style.textAlign = 'center'
   sortButton.style.fontSize = '15px'
   sortButton.style.textTransform = 'uppercase'
 
