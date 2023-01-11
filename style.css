@@ -113,16 +113,41 @@ main {
 
 /* ------------------------- */
 
+.main-content {
+  display: flex;
+  justify-content: center;
+
+  margin-top: 10em;
+}
+
+.left-nav {
+  display: flex;
+  flex-direction: column;
+  background-color: red;
+  background-color: rgb(100, 118, 239);
+  text-align: center;
+  gap: 1em;
+  /* background-color: rgb(230, 230, 249); */
+  border-radius: 1em;
+  margin-top: 4em;
+  margin-bottom: 4em;
+  flex: 1;
+  width: 300px;
+  /* max-width: 300px; */
+  height: 950px;
+}
+
 /* book cards */
 
 .book-list {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   gap: 3em;
   margin-bottom: 10em;
   margin-top: 10em;
+  flex: 3;
 }
 
 .book-card {
@@ -130,8 +155,8 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 300px;
-  height: 400px;
+  width: 700px;
+  height: 320px;
   background-color: rgb(208, 208, 250);
   border-radius: 2em;
   padding-top: 2em;
