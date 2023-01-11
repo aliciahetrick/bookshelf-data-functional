@@ -213,7 +213,7 @@ a {
 .book-list {
   display: flex;
   position: relative;
-  left: 36em;
+  left: 35em;
   /* position: fixed; */
   flex-direction: column;
   /* align-items: center; */

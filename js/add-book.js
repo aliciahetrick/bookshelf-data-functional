@@ -30,5 +30,5 @@ function addBook() {
   const bookList = document.querySelector('.book-list')
   removeAllChildNodes(bookList)
 
-  renderBookshelf()
+  renderBookshelf(arrOfBooks)
 }

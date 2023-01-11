@@ -17,3 +17,5 @@ function createBooks() {
 }
 
 createBooks()
+
+let visibleBooks = arrOfBooks

@@ -1,8 +1,8 @@
 /**
  * returns the book card elements and renders them to a bookshelf
  */
-function renderBookshelf() {
-  const arrOfBooksCreateDOMElements = arrOfBooks.map((book) => {
+function renderBookshelf(whichArrayofBooks) {
+  const arrOfBooksCreateDOMElements = whichArrayofBooks.map((book) => {
     const bookCard = document.createElement('section')
     bookCard.classList.add('book-card')
 
@@ -104,7 +104,7 @@ function renderBookshelf() {
       console.log(comments)
 
       //re-renders home cards
-      renderBookshelf()
+      renderBookshelf(arrOfBooks)
 
       console.log(comments)
 
@@ -196,4 +196,4 @@ function renderBookshelf() {
   main.replaceChildren(...arrOfBooksCreateDOMElements)
 }
 
-renderBookshelf()
+renderBookshelf(arrOfBooks)

@@ -7,15 +7,15 @@ searchButton.addEventListener('click', function () {
   console.group(searchInput.value)
 
   if (searchInput.value.length === 0) {
-    renderBookshelf()
+    renderBookshelf(arrOfBooks)
   } else {
-    arrOfBooks = arrOfBooks.filter(
+    visibleBooks = visibleBooks.filter(
       (book) =>
         book.title.toLowerCase().includes(searchQuery) ||
         book.author[0].toLowerCase().includes(searchQuery) ||
         book.subject[0].toLowerCase().includes(searchQuery)
     )
 
-    renderBookshelf()
+    renderBookshelf(visibleBooks)
   }
 })
