@@ -240,3 +240,32 @@ main {
   font-weight: 600;
   font-size: 15px;
 }
+
+/* pages */
+
+.lorem-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: Raleway;
+  color: rgb(100, 118, 239);
+  background-color: rgb(230, 230, 249);
+  border-radius: 1em;
+  width: 800px;
+  height: 300px;
+  font-weight: 600;
+  font-size: 15px;
+  text-transform: uppercase;
+  margin: 8em;
+}
+
+.navigation-title {
+  padding-left: 2em;
+}
+.lorem-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2em;
+}
