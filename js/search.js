@@ -8,6 +8,7 @@ searchButton.addEventListener('click', function () {
 
   if (searchInput.value.length === 0) {
     renderBookshelf(arrOfBooks)
+    visibleBooks = arrOfBooks
   } else {
     visibleBooks = visibleBooks.filter(
       (book) =>
