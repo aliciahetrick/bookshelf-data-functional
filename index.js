@@ -37,8 +37,9 @@ function renderBookshelf() {
     // creates and sets comment new comment text area
     const textArea = document.createElement('textarea')
     textArea.setAttribute('maxlength', 280)
+
     const textAreaSubmitButton = document.createElement('button')
-    textAreaSubmitButton.textContent = 'Add comment'
+    textAreaSubmitButton.textContent = 'Send'
 
     // creates and sets book topics
     const subject = document.createElement('p')
