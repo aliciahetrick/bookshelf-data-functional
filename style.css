@@ -152,7 +152,7 @@ main {
 
 .book-card {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   width: 700px;
@@ -206,7 +206,7 @@ main {
 }
 
 .book-image {
-  max-width: 100px;
+  max-width: 200px;
 }
 
 .book-title {

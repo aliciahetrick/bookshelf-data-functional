@@ -21,19 +21,43 @@ function renderBookshelf() {
     author.textContent = book.author
     author.classList.add('book-author')
 
+    const comments = document.createElement('p')
+    if (book.comments) {
+      comments.textContent = `Comments: ${book.comments}`
+    } else {
+      comments.textContent = `Comments: none`
+    }
+    comments.classList.add('book-comments')
+
+    const addCommentButton = document.createElement('button')
+    addCommentButton.classList.add('add-comment-button')
+    addCommentButton.textContent = 'Add Comment'
+
+    // creates and sets comment new comment text area
+    const textArea = document.createElement('textarea')
+    textArea.setAttribute('maxlength', 280)
+    const textAreaSubmitButton = document.createElement('button')
+    textAreaSubmitButton.textContent = 'Add comment'
+
     // creates and sets book topics
     const subject = document.createElement('p')
     subject.textContent = `Topics: ${book.subject}`
     subject.classList.add('book-genre')
     subject.style.textTransform = 'uppercase'
 
+    const cardLeft = document.createElement('section')
+    cardLeft.classList.add('card-left')
+
+    const cardRightContainer = document.createElement('section')
+    cardRightContainer.classList.add('card-right-container')
+
     // creates card navbar container
-    const cardNav = document.createElement('section')
-    cardNav.classList.add('card-nav')
+    const cardRightNav = document.createElement('section')
+    cardRightNav.classList.add('card-nav')
 
     // creates card body container
-    const cardBody = document.createElement('section')
-    cardBody.classList.add('card-body')
+    const cardRightBody = document.createElement('section')
+    cardRightBody.classList.add('card-body')
 
     // creates and sets toggle topic button on
     const toggleSubjectsOnButton = document.createElement('button')
@@ -45,15 +69,61 @@ function renderBookshelf() {
     toggleSubjectsOffButton.textContent = 'Toggle Author'
     toggleSubjectsOffButton.classList.add('toggle-topics')
 
+    addCommentButton.addEventListener('click', function () {
+      language.remove()
+      toggleSubjectsOnButton.remove()
+      favBook.remove()
+      title.remove()
+      author.remove()
+      comments.remove()
+      comments.remove()
+      addCommentButton.remove()
+
+      cardRightBody.append(textArea, textAreaSubmitButton)
+      bookCard.append(cardRightBody)
+
+      textAreaSubmitButton.style.all = 'unset'
+      textAreaSubmitButton.style.color = '#fff5fa'
+      textAreaSubmitButton.style.backgroundColor = 'rgb(100, 118, 239)'
+      textAreaSubmitButton.style.borderRadius = '1em'
+      textAreaSubmitButton.style.padding = '0.5em'
+      textAreaSubmitButton.style.paddingLeft = '3em'
+      textAreaSubmitButton.style.paddingRight = '3em'
+      textAreaSubmitButton.style.margin = '1em'
+    })
+
+    textAreaSubmitButton.addEventListener('click', function () {
+      console.log('clicked')
+      // removes elements from card
+      textArea.remove()
+      textAreaSubmitButton.remove()
+
+      // adds new comment to corresponsing house comment array
+      comments.textContent = `${book.comments}, ${textArea.value}`
+      console.log(comments)
+
+      //re-renders home cards
+      renderBookshelf()
+
+      // appends the right home card nav information
+      cardRightContainer.append(cardRightNav, cardRightBody)
+      cardRightNav.append(language, toggleSubjectsOnButton, favBook)
+      cardRightBody.append(title, author, comments, addCommentButton)
+      bookCard.append(cardLeft, cardRightContainer)
+    })
+
     toggleSubjectsOnButton.addEventListener('click', function () {
       // remove elements
       author.remove()
       toggleSubjectsOnButton.remove()
 
       // append elements
-      cardNav.append(language, toggleSubjectsOffButton, favBook)
-      cardBody.append(subject)
-      bookCard.append(cardNav, cardBody)
+
+      cardLeft.append(image)
+      cardRightContainer.append(cardRightNav, cardRightBody)
+      cardRightNav.append(language, toggleSubjectsOffButton, favBook)
+      cardRightBody.append(subject)
+      bookCard.append(cardLeft, cardRightContainer)
 
       // styling
       subject.style.paddingLeft = '1em'
@@ -66,9 +136,11 @@ function renderBookshelf() {
       toggleSubjectsOffButton.remove()
 
       // append elements
-      cardNav.append(language, toggleSubjectsOnButton, favBook)
-      cardBody.append(author)
-      bookCard.append(cardNav, cardBody)
+      cardLeft.append(image)
+      cardRightContainer.append(cardRightNav, cardRightBody)
+      cardRightNav.append(language, toggleSubjectsOnButton, favBook)
+      cardRightBody.append(title, author)
+      bookCard.append(cardLeft, cardRightContainer)
     })
 
     // creates and sets book language
@@ -107,9 +179,11 @@ function renderBookshelf() {
     }
 
     // appends book card elements to book card
-    cardNav.append(language, toggleSubjectsOnButton, favBook)
-    cardBody.append(image, title, author)
-    bookCard.append(cardNav, cardBody)
+    cardLeft.append(image)
+    cardRightContainer.append(cardRightNav, cardRightBody)
+    cardRightNav.append(language, toggleSubjectsOnButton, favBook)
+    cardRightBody.append(title, author, comments, addCommentButton)
+    bookCard.append(cardLeft, cardRightContainer)
 
     return bookCard
   })
