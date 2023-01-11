@@ -18,7 +18,7 @@ function renderBookshelf(whichArrayofBooks) {
 
     // creates and sets book author
     const author = document.createElement('p')
-    author.textContent = book.author
+    author.textContent = `Author: ${book.author}`
     author.classList.add('book-author')
 
     const comments = document.createElement('p')
@@ -83,6 +83,8 @@ function renderBookshelf(whichArrayofBooks) {
 
       cardRightBody.append(textArea, textAreaSubmitButton)
       bookCard.append(cardRightBody)
+
+      cardRightBody.style.border = '1px solid green'
 
       textAreaSubmitButton.style.all = 'unset'
       textAreaSubmitButton.style.color = '#fff5fa'

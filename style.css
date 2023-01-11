@@ -228,7 +228,7 @@ a {
 .book-card {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   width: 700px;
   height: 320px;
@@ -274,6 +274,25 @@ a {
 
 /* book card body */
 
+.card-left {
+  border: 1px solid red;
+  position: relative;
+  left: 5%;
+}
+
+.card-right-container {
+  border: 1px solid red;
+  position: relative;
+
+  left: 10%;
+  width: 400px;
+}
+
+.card-nav {
+  display: flex;
+  justify-content: center;
+}
+
 .card-body {
   display: flex;
   flex-direction: column;
@@ -303,6 +322,23 @@ a {
   font-size: 15px;
   text-transform: uppercase;
   text-align: center;
+}
+
+.add-comment-button {
+  all: unset;
+  background-color: rgb(100, 118, 239);
+  /* background-color: rgb(100, 118, 239); */
+  color: rgb(231, 217, 249);
+  border-radius: 1em;
+  padding: 0.5em;
+  padding-left: 3em;
+  padding-right: 3em;
+  margin: 1em;
+
+  font-family: Raleway;
+  font-weight: 600;
+  font-size: 15px;
+  text-transform: uppercase;
 }
 
 .book-genre {
