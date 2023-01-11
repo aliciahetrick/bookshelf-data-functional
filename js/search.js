@@ -10,6 +10,7 @@ searchButton.addEventListener('click', function () {
     renderBookshelf(arrOfBooks)
     visibleBooks = arrOfBooks
   } else {
+    visibleBooks = arrOfBooks
     visibleBooks = visibleBooks.filter(
       (book) =>
         book.title.toLowerCase().includes(searchQuery) ||
