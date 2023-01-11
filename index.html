@@ -31,11 +31,28 @@
     <section class="main-content">
       <section class="left-nav">
         <section class="search">
+          <span class="material-symbols-outlined"> search </span>
           <input type="search" placeholder="Search" class="search-input" />
-          <button class="search-button">
-            <span class="material-symbols-outlined"> search </span>
-          </button>
+          <button class="search-button">Go</button>
         </section>
+        <section class="sort-container">
+          <span class="material-symbols-outlined"> sort </span>
+          <label for="sort-button"></label>
+          <select name="sort" class="sort-dropdown">
+            <option value="">sort</option>
+            <option class="ascending-title" value="ascending-title">Title (A to Z)</option>
+            <option class="descending-title" value="descending-title">Title (Z to A)</option>
+            <option class="ascending-author" value="ascending-author">Author (A to Z)</option>
+            <option class="descending-author" value="descending-author">Author (Z to A)</option>
+            <option class="sort-by-most-topics" value="sort-by-most-topics">
+              Sort by most topics
+            </option>
+            <option class="sort-by-least-topics" value="sort-by-least-topics">
+              Sort by least topics
+            </option>
+          </select>
+        </section>
+
         <section class="add-book">
           <p class="add-book">Add a Book</p>
           <input type="text" class="add-title-input" name="title" placeholder="Title" required />
@@ -50,23 +67,6 @@
           />
           <input type="text" class="add-topics-input" name="topics" placeholder="Topics" required />
           <button class="add-book-button">Add Book</button>
-        </section>
-
-        <section class="sort-container">
-          <label for="sort-button"><span class="material-symbols-outlined"> sort </span></label>
-          <select name="sort" class="sort-dropdown">
-            <option value="">sort</option>
-            <option class="ascending-title" value="ascending-title">Title (A to Z)</option>
-            <option class="descending-title" value="descending-title">Title (Z to A)</option>
-            <option class="ascending-author" value="ascending-author">Author (A to Z)</option>
-            <option class="descending-author" value="descending-author">Author (Z to A)</option>
-            <option class="sort-by-most-topics" value="sort-by-most-topics">
-              Sort by most topics
-            </option>
-            <option class="sort-by-least-topics" value="sort-by-least-topics">
-              Sort by least topics
-            </option>
-          </select>
         </section>
       </section>
       <main class="book-list"></main>
