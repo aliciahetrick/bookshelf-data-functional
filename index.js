@@ -117,6 +117,8 @@ function renderBookshelf(whichArrayofBooks) {
 
     toggleSubjectsOnButton.addEventListener('click', function () {
       // remove elements
+      comments.remove()
+      addCommentButton.remove()
       author.remove()
       toggleSubjectsOnButton.remove()
 
@@ -142,7 +144,7 @@ function renderBookshelf(whichArrayofBooks) {
       cardLeft.append(image)
       cardRightContainer.append(cardRightNav, cardRightBody)
       cardRightNav.append(language, toggleSubjectsOnButton, favBook)
-      cardRightBody.append(title, author)
+      cardRightBody.append(title, author, comments, addCommentButton)
       bookCard.append(cardLeft, cardRightContainer)
     })
 
