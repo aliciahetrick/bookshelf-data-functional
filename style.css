@@ -20,6 +20,11 @@ main {
   font-family: Raleway;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 /* ------------------------- */
 
 /* navbar */
@@ -37,6 +42,54 @@ main {
 
   color: rgb(231, 217, 249);
   background-color: rgb(100, 118, 239);
+  font-family: Raleway;
+  font-weight: 600;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+.add-book {
+  display: flex;
+  flex-direction: column;
+  font-family: Raleway;
+  font-weight: 600;
+  font-size: 15px;
+  text-transform: uppercase;
+  color: rgb(231, 217, 249);
+  /* background-color: rgb(100, 118, 239);
+  border-radius: 1em; */
+  padding-bottom: 1em;
+}
+
+.add-title-input,
+.add-author-input,
+.add-language-input,
+.add-topics-input {
+  all: unset;
+  margin-right: 0.5em;
+  padding: 0.5em;
+  margin: 1em;
+  color: #fff5fa;
+  background-color: rgb(125, 136, 255);
+  font-family: Raleway;
+  font-weight: 600;
+  font-size: 15px;
+  text-transform: uppercase;
+
+  border-radius: 1em;
+}
+
+.add-book-button {
+  all: unset;
+  color: rgb(100, 118, 239);
+  /* background-color: rgb(100, 118, 239); */
+  background-color: rgb(208, 208, 250);
+  border-radius: 1em;
+  padding: 0.5em;
+  padding-left: 3em;
+  padding-right: 3em;
+  margin: 1em;
+
   font-family: Raleway;
   font-weight: 600;
   font-size: 15px;
@@ -97,7 +150,7 @@ main {
 ::placeholder {
   color: rgb(231, 217, 249);
   text-align: center;
-  padding-left: 15px;
+  /* padding-left: 15px; */
 }
 
 .search-button {
@@ -127,7 +180,7 @@ main {
 
   flex-direction: column;
   /* background-color: red; */
-  background-color: rgb(100, 118, 239);
+  /* background-color: rgb(100, 118, 239); */
   text-align: center;
   gap: 1em;
   /* background-color: rgb(230, 230, 249); */
@@ -138,6 +191,8 @@ main {
   width: 300px;
   /* max-width: 300px; */
   height: 70%;
+  background-color: rgb(100, 118, 239);
+  border-radius: 1em;
 }
 
 /* book cards */

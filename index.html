@@ -30,8 +30,14 @@
     <!-- book cards -->
     <section class="main-content">
       <section class="left-nav">
-        <section class="add-home">
-          <p class="add-title">Add a Book</p>
+        <section class="search">
+          <input type="search" placeholder="Search" class="search-input" />
+          <button class="search-button">
+            <span class="material-symbols-outlined"> search </span>
+          </button>
+        </section>
+        <section class="add-book">
+          <p class="add-book">Add a Book</p>
           <input type="text" class="add-title-input" name="title" placeholder="Title" required />
 
           <input type="text" class="add-author-input" name="author" placeholder="Author" required />
@@ -46,12 +52,6 @@
           <button class="add-book-button">Add Book</button>
         </section>
 
-        <section class="search">
-          <input type="search" placeholder="Search" class="search-input" />
-          <button class="search-button">
-            <span class="material-symbols-outlined"> search </span>
-          </button>
-        </section>
         <section class="sort-container">
           <label for="sort-button"><span class="material-symbols-outlined"> sort </span></label>
           <select name="sort" class="sort-dropdown">
