@@ -183,13 +183,12 @@ a {
   display: flex;
   justify-content: center;
   margin-top: 8em;
-  padding-left: 1em;
 }
 
 .left-nav {
   display: flex;
   position: fixed;
-  left: 15em;
+  left: 20%;
 
   flex-direction: column;
   /* background-color: red; */
@@ -213,7 +212,7 @@ a {
 .book-list {
   display: flex;
   position: relative;
-  left: 35em;
+  left: 40%;
   /* position: fixed; */
   flex-direction: column;
   /* align-items: center; */
