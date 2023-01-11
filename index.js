@@ -25,6 +25,7 @@ function renderBookshelf() {
     if (book.comments) {
       comments.textContent = `Comments: ${book.comments}`
     } else {
+      book.comments = []
       comments.textContent = `Comments: none`
     }
     comments.classList.add('book-comments')
@@ -76,7 +77,7 @@ function renderBookshelf() {
       title.remove()
       author.remove()
       comments.remove()
-      comments.remove()
+
       addCommentButton.remove()
 
       cardRightBody.append(textArea, textAreaSubmitButton)
@@ -93,17 +94,18 @@ function renderBookshelf() {
     })
 
     textAreaSubmitButton.addEventListener('click', function () {
-      console.log('clicked')
       // removes elements from card
       textArea.remove()
       textAreaSubmitButton.remove()
 
       // adds new comment to corresponsing house comment array
-      comments.textContent = `${book.comments}, ${textArea.value}`
+      book.comments.push(` ${textArea.value}`)
       console.log(comments)
 
       //re-renders home cards
       renderBookshelf()
+
+      console.log(comments)
 
       // appends the right home card nav information
       cardRightContainer.append(cardRightNav, cardRightBody)
