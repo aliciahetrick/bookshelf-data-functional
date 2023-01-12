@@ -53,6 +53,7 @@ function renderBookshelf(arrayofBooks) {
       // styling
       subject.style.paddingLeft = '1em'
       subject.style.paddingRight = '1em'
+      subject.style.fontSize = '12px'
     })
 
     // creates and sets toggle topic button off
