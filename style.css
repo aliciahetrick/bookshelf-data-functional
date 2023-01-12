@@ -108,9 +108,13 @@ a {
   padding: 0.5em;
   margin-left: 15px;
   background-color: rgb(125, 136, 255);
-  color: rgb(231, 217, 249);
+  color: #fff5fa;
+
   text-align: center;
   border-radius: 1em;
+  font-weight: 600;
+  font-family: Raleway;
+  text-transform: uppercase;
 }
 
 .search-button {
@@ -209,10 +213,7 @@ a {
   display: flex;
   position: relative;
   left: 40%;
-  /* position: fixed; */
   flex-direction: column;
-  /* align-items: center; */
-  /* justify-content: center; */
   gap: 3em;
   margin-bottom: 10em;
   margin-top: 4em;
@@ -226,7 +227,6 @@ a {
 .book-card {
   display: flex;
   flex-direction: row;
-  /* justify-content: center; */
   align-items: center;
   width: 700px;
   height: 320px;
@@ -239,7 +239,6 @@ a {
 /* book image */
 
 .card-left {
-  border: 1px solid red;
   position: relative;
   left: 5%;
 }
@@ -267,7 +266,6 @@ a {
 .toggle-topics {
   all: unset;
   background-color: rgb(100, 118, 239);
-  /* background-color: rgb(100, 118, 239); */
   color: rgb(231, 217, 249);
   border-radius: 1em;
   padding: 0.5em;
@@ -292,7 +290,6 @@ a {
 /* book card body */
 
 .card-right-container {
-  border: 1px solid red;
   position: relative;
   left: 10%;
   width: 400px;

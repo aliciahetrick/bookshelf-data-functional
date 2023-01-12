@@ -85,7 +85,6 @@ function renderBookshelf(whichArrayofBooks) {
       cardRightBody.append(textArea, textAreaSubmitButton)
       bookCard.append(cardRightBody)
 
-      cardRightBody.style.border = '1px solid green'
       cardRightBody.style.position = 'relative'
       cardRightBody.style.left = '10%'
       cardRightBody.style.width = '400px'
