@@ -16,25 +16,25 @@
     />
   </head>
   <body>
+    <!-- navbar -->
     <nav class="navbar">
-      <!-- left nav sort button -->
       <a href="about.html">About</a>
-      <!-- center nav title and favorite count -->
       <section class="center-nav">
         <a href="index.html" class="my-library">Alicia's Library </a>
         <span> ♥ <span class="fav-books-count">0</span></span>
       </section>
       <a href="contact.html">Contact</a>
-      <!-- right nav search box -->
     </nav>
     <!-- book cards -->
     <section class="main-content">
       <section class="left-nav">
+        <!-- left nav search -->
         <section class="search">
           <span class="material-symbols-outlined"> search </span>
           <input type="search" placeholder="Search" class="search-input" />
           <button class="search-button">Go</button>
         </section>
+        <!-- left nav sort -->
         <section class="sort-container">
           <span class="material-symbols-outlined"> sort </span>
           <label for="sort-button"></label>
@@ -52,11 +52,10 @@
             </option>
           </select>
         </section>
-
+        <!-- left nav add book -->
         <section class="add-book">
           <p class="add-book">Add a Book</p>
           <input type="text" class="add-title-input" name="title" placeholder="Title" required />
-
           <input type="text" class="add-author-input" name="author" placeholder="Author" required />
           <input
             type="text"
@@ -70,6 +69,7 @@
           <button class="add-book-button">Add Book</button>
         </section>
       </section>
+      <!-- main book list content -->
       <main class="book-list"></main>
     </section>
     <!-- scripts -->

@@ -18,4 +18,5 @@ function createBooks() {
 
 createBooks()
 
+// makes a copy of book array
 let visibleBooks = arrOfBooks

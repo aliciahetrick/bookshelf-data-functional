@@ -1,8 +1,9 @@
 /**
+ * @param {array} arrayofBooks
  * @returns the book card elements and renders them to a bookshelf
  */
-function renderBookshelf(whichArrayofBooks) {
-  const arrOfBooksCreateDOMElements = whichArrayofBooks.map((book) => {
+function renderBookshelf(arrayofBooks) {
+  const arrOfBooksCreateDOMElements = arrayofBooks.map((book) => {
     // creates book card
     const bookCard = document.createElement('section')
     bookCard.classList.add('book-card')
