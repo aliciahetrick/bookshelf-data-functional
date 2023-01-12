@@ -140,11 +140,11 @@ a {
 }
 
 .sort-dropdown {
+  all: unset;
   margin-left: 15px;
   padding: 0.5em;
   border-radius: 1em;
   text-align: center;
-
   color: rgb(231, 217, 249);
   background-color: rgb(125, 136, 255);
   font-family: Raleway;
