@@ -25,9 +25,18 @@ a {
   color: inherit;
 }
 
+::placeholder {
+  color: rgb(231, 217, 249);
+  text-align: center;
+  font-family: Raleway;
+  font-weight: 600;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
 /* ------------------------- */
 
-/* navbar */
+/* main navbar */
 
 .navbar {
   display: flex;
@@ -48,67 +57,78 @@ a {
   text-transform: uppercase;
 }
 
-.add-book {
+.center-nav {
   display: flex;
   flex-direction: column;
-  font-family: Raleway;
-  font-weight: 600;
-  font-size: 15px;
-  text-transform: uppercase;
-  color: rgb(231, 217, 249);
-  /* background-color: rgb(100, 118, 239);
-  border-radius: 1em; */
-  padding-bottom: 1em;
+  align-items: center;
 }
 
-.add-title-input,
-.add-author-input,
-.add-language-input,
-.add-topics-input {
+/* ------------------------- */
+
+/* main content */
+
+.main-content {
+  display: flex;
+  justify-content: center;
+  margin-top: 8em;
+}
+
+/* ------------------------- */
+
+/* left nav */
+
+.left-nav {
+  display: flex;
+  position: fixed;
+  left: 20%;
+  flex-direction: column;
+  text-align: center;
+  gap: 1em;
+  border-radius: 1em;
+  margin-top: 4em;
+  margin-bottom: 4em;
+  flex: 1;
+  width: 300px;
+  height: 70%;
+  background-color: rgb(100, 118, 239);
+  border-radius: 1em;
+}
+
+/* search - left nav */
+
+.search {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  text-align: center;
+}
+
+.search-input {
   all: unset;
   margin-right: 0.5em;
   padding: 0.5em;
-  margin: 1em;
-  color: #fff5fa;
+  margin-left: 15px;
   background-color: rgb(125, 136, 255);
-  font-family: Raleway;
-  font-weight: 600;
-  font-size: 15px;
-  text-transform: uppercase;
-
+  color: rgb(231, 217, 249);
+  text-align: center;
   border-radius: 1em;
 }
 
-.add-book-button {
+.search-button {
   all: unset;
-  color: rgb(100, 118, 239);
-  /* background-color: rgb(100, 118, 239); */
-  background-color: rgb(208, 208, 250);
-  border-radius: 1em;
-  padding: 0.5em;
-  padding-left: 3em;
-  padding-right: 3em;
-  margin: 1em;
-
+  color: rgb(231, 217, 249);
+  background-color: rgb(100, 118, 239);
   font-family: Raleway;
   font-weight: 600;
   font-size: 15px;
   text-transform: uppercase;
 }
 
-/* left nav / sort */
+/* sort - left nav */
 
 .sort-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
-}
-
-.sort-button {
-  color: rgb(231, 217, 249);
-  font-family: Raleway;
-  font-size: 15px;
-  text-transform: uppercase;
 }
 
 .material-symbols-outlined {
@@ -129,48 +149,52 @@ a {
   text-transform: uppercase;
 }
 
-/* center nav / favorite books count */
-
-.center-nav {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* right nav / search  */
-.search {
-  padding-top: 1em;
-  padding-bottom: 1em;
-  text-align: center;
-}
-
-.search-input {
-  all: unset;
-  margin-right: 0.5em;
-  padding: 0.5em;
-  margin-left: 15px;
-
-  background-color: rgb(125, 136, 255);
+.sort-button {
   color: rgb(231, 217, 249);
-  text-align: center;
-  border-radius: 1em;
-}
-
-::placeholder {
-  color: rgb(231, 217, 249);
-  text-align: center;
-  /* padding-left: 15px; */
   font-family: Raleway;
-  font-weight: 600;
   font-size: 15px;
   text-transform: uppercase;
 }
 
-.search-button {
-  all: unset;
+/* add book - left nav */
 
+.add-book {
+  display: flex;
+  flex-direction: column;
+  font-family: Raleway;
+  font-weight: 600;
+  font-size: 15px;
+  text-transform: uppercase;
   color: rgb(231, 217, 249);
-  background-color: rgb(100, 118, 239);
+  padding-bottom: 1em;
+}
+
+.add-title-input,
+.add-author-input,
+.add-language-input,
+.add-topics-input {
+  all: unset;
+  margin-right: 0.5em;
+  padding: 0.5em;
+  margin: 1em;
+  color: #fff5fa;
+  background-color: rgb(125, 136, 255);
+  font-family: Raleway;
+  font-weight: 600;
+  font-size: 15px;
+  text-transform: uppercase;
+  border-radius: 1em;
+}
+
+.add-book-button {
+  all: unset;
+  color: rgb(100, 118, 239);
+  background-color: rgb(208, 208, 250);
+  border-radius: 1em;
+  padding: 0.5em;
+  padding-left: 3em;
+  padding-right: 3em;
+  margin: 1em;
   font-family: Raleway;
   font-weight: 600;
   font-size: 15px;
@@ -179,35 +203,7 @@ a {
 
 /* ------------------------- */
 
-.main-content {
-  display: flex;
-  justify-content: center;
-  margin-top: 8em;
-}
-
-.left-nav {
-  display: flex;
-  position: fixed;
-  left: 20%;
-
-  flex-direction: column;
-  /* background-color: red; */
-  /* background-color: rgb(100, 118, 239); */
-  text-align: center;
-  gap: 1em;
-  /* background-color: rgb(230, 230, 249); */
-  border-radius: 1em;
-  margin-top: 4em;
-  margin-bottom: 4em;
-  flex: 1;
-  width: 300px;
-  /* max-width: 300px; */
-  height: 70%;
-  background-color: rgb(100, 118, 239);
-  border-radius: 1em;
-}
-
-/* book cards */
+/* book cards list */
 
 .book-list {
   display: flex;
@@ -225,6 +221,8 @@ a {
   flex: 3;
 }
 
+/* book cards */
+
 .book-card {
   display: flex;
   flex-direction: row;
@@ -238,10 +236,23 @@ a {
   padding-bottom: 2em;
 }
 
-/* book card nav */
+/* book image */
+
+.card-left {
+  border: 1px solid red;
+  position: relative;
+  left: 5%;
+}
+
+.book-image {
+  max-width: 200px;
+}
+
+/* book card right nav */
 
 .card-nav {
   display: flex;
+  justify-content: center;
   gap: 2em;
 }
 
@@ -255,11 +266,17 @@ a {
 
 .toggle-topics {
   all: unset;
+  background-color: rgb(100, 118, 239);
+  /* background-color: rgb(100, 118, 239); */
+  color: rgb(231, 217, 249);
+  border-radius: 1em;
+  padding: 0.5em;
+  padding-left: 3em;
+  padding-right: 3em;
+  margin: 1em;
 
-  color: rgb(100, 118, 239);
-  text-align: center;
-  text-transform: uppercase;
-  font-weight: 800;
+  font-family: Raleway;
+  font-weight: 600;
   font-size: 15px;
   text-transform: uppercase;
 }
@@ -274,12 +291,6 @@ a {
 
 /* book card body */
 
-.card-left {
-  border: 1px solid red;
-  position: relative;
-  left: 5%;
-}
-
 .card-right-container {
   border: 1px solid red;
   position: relative;
@@ -288,26 +299,16 @@ a {
   width: 400px;
 }
 
-.card-nav {
-  display: flex;
-  justify-content: center;
-}
-
 .card-body {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.book-image {
-  max-width: 200px;
-}
-
 .book-title {
   margin-bottom: 0px;
   padding-left: 30px;
   padding-right: 1em;
-
   font-weight: 800;
   font-size: 20px;
   text-transform: uppercase;
@@ -317,7 +318,6 @@ a {
 .book-author {
   padding-left: 30px;
   padding-right: 1em;
-
   font-weight: 600;
   font-size: 15px;
   text-transform: uppercase;
@@ -327,7 +327,6 @@ a {
 .add-comment-button {
   all: unset;
   background-color: rgb(100, 118, 239);
-  /* background-color: rgb(100, 118, 239); */
   color: rgb(231, 217, 249);
   border-radius: 1em;
   padding: 0.5em;
@@ -352,7 +351,14 @@ a {
   font-size: 15px;
 }
 
+/* ------------------------- */
+
 /* pages */
+
+.pages-body {
+  display: flex;
+  justify-content: center;
+}
 
 .lorem-container {
   display: flex;
@@ -368,7 +374,7 @@ a {
   font-weight: 600;
   font-size: 15px;
   text-transform: uppercase;
-  margin: 8em;
+  margin: 10em;
 }
 
 .navigation-title {
