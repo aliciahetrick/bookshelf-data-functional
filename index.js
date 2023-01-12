@@ -78,6 +78,7 @@ function renderBookshelf(whichArrayofBooks) {
       title.remove()
       author.remove()
       comments.remove()
+      cardRightContainer.remove()
 
       addCommentButton.remove()
 
@@ -85,6 +86,9 @@ function renderBookshelf(whichArrayofBooks) {
       bookCard.append(cardRightBody)
 
       cardRightBody.style.border = '1px solid green'
+      cardRightBody.style.position = 'relative'
+      cardRightBody.style.left = '10%'
+      cardRightBody.style.width = '400px'
 
       textAreaSubmitButton.style.all = 'unset'
       textAreaSubmitButton.style.color = '#fff5fa'
