@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>bookshelf-data</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav class="navbar">
+      <a href="about.html">About</a>
+      <section class="center-nav">
+        <a href="index.html" class="my-library">Alicia's Library </a>
+        <span> ♥ <span class="fav-books-count">0</span></span>
+      </section>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <!-- book cards -->
+    <section class="main-content">
+      <section class="left-nav">
+        <!-- left nav search -->
+        <section class="search">
+          <span class="material-symbols-outlined"> search </span>
+          <input type="search" placeholder="Search" class="search-input" />
+          <button class="search-button">Go</button>
+        </section>
+        <!-- left nav sort -->
+        <section class="sort-container">
+          <span class="material-symbols-outlined"> sort </span>
+          <label for="sort-button"></label>
+          <select name="sort" class="sort-dropdown">
+            <option value="">sort</option>
+            <option class="ascending-title" value="ascending-title">Title (A to Z)</option>
+            <option class="descending-title" value="descending-title">Title (Z to A)</option>
+            <option class="ascending-author" value="ascending-author">Author (A to Z)</option>
+            <option class="descending-author" value="descending-author">Author (Z to A)</option>
+            <option class="sort-by-most-topics" value="sort-by-most-topics">
+              Sort by most topics
+            </option>
+            <option class="sort-by-least-topics" value="sort-by-least-topics">
+              Sort by least topics
+            </option>
+          </select>
+        </section>
+        <!-- left nav add book -->
+        <section class="add-book">
+          <p class="add-book-title">Add a Book</p>
+          <input type="text" class="add-title-input" name="title" placeholder="Title" required />
+          <input type="text" class="add-author-input" name="author" placeholder="Author" required />
+          <input
+            type="text"
+            class="add-language-input"
+            name="language"
+            placeholder="Language"
+            maxlength="2"
+            required
+          />
+          <input type="text" class="add-topics-input" name="topics" placeholder="Topics" required />
+          <button class="add-book-button">Add Book</button>
+        </section>
+      </section>
+      <!-- main book list content -->
+      <main class="book-list"></main>
+    </section>
+    <!-- scripts -->
+    <script src="js/book-data.js"></script>
+    <script src="js/create-books.js"></script>
+    <script src="js/add-book.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/sort.js"></script>
+    <script src="js/nav-favorite.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
