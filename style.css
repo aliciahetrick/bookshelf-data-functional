@@ -324,6 +324,13 @@ a {
   text-align: center;
 }
 
+.book-comments {
+  font-family: Raleway;
+  font-weight: 600;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
 .add-comment-button {
   all: unset;
   background-color: rgb(100, 118, 239);
