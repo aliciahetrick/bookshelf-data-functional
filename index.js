@@ -215,5 +215,3 @@ function renderBookshelf(arrayofBooks) {
 }
 
 renderBookshelf(arrOfBooks)
-
-//testing branch
